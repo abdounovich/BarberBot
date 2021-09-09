@@ -80,7 +80,7 @@ background-color:
             <a href="/types" class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"><i class=" p-2 fa fa-server"></i></a>
             <a class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"   href="/sendMsg/0/"><i class=" p-2 fa fa-comments"></i> </a>
 
-            <a href="/settings" class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"> <i class=" p-2 fa fa-wrench"></i></a> 
+            <a href="/parametres" class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"> <i class=" p-2 fa fa-wrench"></i></a> 
 
 
 

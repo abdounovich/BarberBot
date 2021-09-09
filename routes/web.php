@@ -45,11 +45,7 @@ Route::get('/test/{type}/D2/{username}/{Cid}','testController@tomorrow')
 ;
 Route::get('/test/{type}/D3/{username}/{Cid}','testController@afterTomorrow')
 ;
-Route::get('/settings','SettingController@index')
-->middleware('auth');
-Route::post('/settings','SettingController@store')
-->middleware('auth');
-Route::post('/settings/{id}','SettingController@update')
+Route::get('/parametres','SettingController@index')
 ->middleware('auth');
 
 
@@ -85,40 +81,15 @@ Route::get('/commande', function () {
 
 
 
+
+Route::post('/parametres/update','SettingController@update')
+->middleware('auth');
 Route::post('/parametres/update', function (Request $request) {
 
 
 
 
- $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
  
-    for ($i = 0; $i < 7; $i++){
-    $debut=$request->get($anglais[$i].'-debut');
-       
-    $fin=$request->get($anglais[$i]."-fin"); 
-     
-
-   $debut_repos=$request->get($anglais[$i]."-debut-repos"); 
-      
-
-     $fin_repos=$request->get($anglais[$i]."-fin-repos"); 
-     
-
-     $active=$request->get($anglais[$i]."-active"); 
-       
-
-
- 
-
-    Setting::set($anglais[$i], [
-        'debut'=>$debut,
-        'fin'=> $fin,
-        'active' => $active,
-        'debut-repos' => $debut_repos,
-        'fin-repos' =>$fin_repos
-            ]);
-        }
-        return back()->with("success"," لقد تم حفظ البيانات بنجاح");
     });
 
     Route::get('/testC','HomeController@test');
