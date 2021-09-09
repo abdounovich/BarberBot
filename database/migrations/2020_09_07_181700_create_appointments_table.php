@@ -15,19 +15,19 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('facebook');
+            $table->text('facebook')->nullable();
             $table->text('ActiveType');
-            $table->text('fb_id');
+            $table->text('fb_id')->nullable();
             $table->text('jour');
             $table->text('debut');
             $table->text('fin');
 
-            $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('type_id')->nullable();
             $table->foreign('type_id')
             ->references('id')->on('types')
             ->onDelete('cascade');
             
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')
             ->references('id')->on('clients')
             ->onDelete('cascade');

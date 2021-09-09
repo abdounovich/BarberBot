@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Setting;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 use Illuminate\Support\Facades\Config;
 
 class SettingController extends Controller
@@ -70,6 +71,7 @@ return view('parametres.index');
         //
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -77,7 +79,47 @@ return view('parametres.index');
      * @param  \App\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $setting)
+    public function    update_generale_parametre(Request $request)
+    {
+
+        $primary=$request->get('primary');
+        $secondary=$request->get('secondary');
+        $text_color=$request->get('text-color');
+
+
+        if ($request->isMethod('post')) 
+                 
+        {
+         $image_name = $request->file('bg-image')->getRealPath();
+         Cloudder::upload($image_name, null);
+         list($width, $height) = getimagesize($image_name);
+         $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+         $bg_image=$image_url;
+         dd($bg_image) ;
+         }
+
+
+        Setting::set("theme", [
+            'primary'=>$primary,
+            'secondary'=> $secondary,
+            'text-color' => $text_color,
+            'bg-image' => $bg_image,
+                ]);
+
+
+                return back()->with("success"," لقد تم حفظ البيانات بنجاح");
+
+            }
+     
+    
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Setting  $setting
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
     {
      
         $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  

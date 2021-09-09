@@ -34,7 +34,7 @@
     
     font-family: 'Cairo', sans-serif;
 }
-    bg-maron{
+    .bg-maron{
 background-color: 
 #FFE3C7;
     }

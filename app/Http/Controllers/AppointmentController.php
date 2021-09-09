@@ -155,7 +155,7 @@ $afterTommorow=date('Y-m-d', strtotime($today. ' + 2 day'));
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storePrivateAppointment(Request $request)
     {
 
         date_default_timezone_set("Africa/Algiers");
@@ -192,14 +192,10 @@ elseif ($appointment->fin>$debut and $appointment->fin<$fin ){
 
       if ($counter==0) {
         $app=new Appointment();
-        $app->facebook="admin";
-        $app->type_id="1";
         $app->ActiveType="5";
-        $app->client_id="3889";
         $app->jour=$jour;
         $app->debut=$debut;
         $app->fin=$fin;
-        $app->fb_id="4845148484484";
         $app->save(); 
     
            
@@ -208,14 +204,10 @@ elseif ($appointment->fin>$debut and $appointment->fin<$fin ){
 }
 else{
     $app=new Appointment();
-    $app->facebook="admin";
-    $app->type_id="1";
     $app->ActiveType="5";
-    $app->client_id="3889";
     $app->jour=$jour;
     $app->debut=$debut;
     $app->fin=$fin;
-    $app->fb_id="4845148484484";
     $app->save(); 
 
        

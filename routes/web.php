@@ -33,7 +33,7 @@ Route::get('/clients','ClientController@show')->middleware('auth');
 Route::post('/client/edit/{id}','ClientController@update')->name("client.editpoints");
 
 Route::get('/delete','AppointmentController@deleteFunction')->middleware('auth');
-Route::post('/addAppoint','AppointmentController@store');
+Route::post('/Add-private-appointment','AppointmentController@storePrivateAppointment');
 
 Route::post('/types','TypeController@store')
 ->middleware('auth');
@@ -84,18 +84,12 @@ Route::get('/commande', function () {
 
 Route::post('/parametres/update','SettingController@update')
 ->middleware('auth');
-Route::post('/parametres/update', function (Request $request) {
 
 
+Route::post('/edit-generale-parametre','SettingController@update_generale_parametre')
+->middleware('auth');
 
-
- 
-    });
-
-    Route::get('/testC','HomeController@test');
-
-
-
+Route::get('/testC','HomeController@test');
 Route::get('/abcd','TestController@try');
 Route::post('/sendMsg/{id}','ClientController@sendMessageToClient');
 Route::get('/sendMsg/{id}','ClientController@sendMessageToClientView');

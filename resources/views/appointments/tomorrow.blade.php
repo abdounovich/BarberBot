@@ -22,13 +22,7 @@
       <tbody class=" text-right">
      
         @foreach ($Tomorow_appointments as $Tomorow_appointment)
-     @php
-      
-        ini_set("allow_url_fopen", 1);
-                      $userInfoData=file_get_contents('https://graph.facebook.com/v2.6/'.$Tomorow_appointment->client->fb_id.'?fields=profile_pic&access_token='.$config);
-                      $userInfo = json_decode($userInfoData, true);
-                  $picture = $userInfo['profile_pic'] ;
-        @endphp  
+  
         @if ($Tomorow_appointment->ActiveType==5)
         <tr class="bg-warning" ><td  class="bg-warning"></td>
           <td  class="bg-warning text-dark">@php $debut = date('H:i', strtotime($Tomorow_appointment->debut));
@@ -42,6 +36,14 @@
   
         
     @else
+
+    @php
+      
+    ini_set("allow_url_fopen", 1);
+                  $userInfoData=file_get_contents('https://graph.facebook.com/v2.6/'.$Tomorow_appointment->client->fb_id.'?fields=profile_pic&access_token='.$config);
+                  $userInfo = json_decode($userInfoData, true);
+              $picture = $userInfo['profile_pic'] ;
+    @endphp  
         <tr>
           <th scope="row">{{ $loop->index+1 }}
           </th>
