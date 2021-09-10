@@ -6,7 +6,7 @@
         <div  class="col col-12 bg-premier text-color mt-5  " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لنهار الغد</h2></div>
    @else
     <h3 class="p-2 text-color">مواعيد الغد </h3>
-    <table class="table bg-deuxieme text-color"style="opacity:0.9">
+    <table class="table bg-deuxieme "style="opacity:0.9">
       <thead class=" bg-premier text-deuxieme text-right">
         <tr>
 
@@ -43,7 +43,7 @@
                   $userInfo = json_decode($userInfoData, true);
               $picture = $userInfo['profile_pic'] ;
     @endphp  
-        <tr>
+        <tr class="bg-deuxieme text-color" >
         
         
           <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="{{$picture}}" alt="">

@@ -9,7 +9,7 @@
    
 @else
     <h3 class="p-2 text-color">المواعيد السابقة :</h3>
-    <table class="table table-striped bg-premier"style="opacity:0.9">
+    <table class="table  bg-deuxieme " style="opacity:0.9 ">
       <thead class=" bg-premier text-deuxieme text-right">
         <tr>
           <th scope="col">#</th>          
@@ -30,7 +30,7 @@
                       $userInfo = json_decode($userInfoData, true);
                   $picture = $userInfo['profile_pic'] ;
         @endphp  
-        <tr>
+        <tr class="bg-deuxieme text-color" >
           <th scope="row">{{ $loop->index+1 }}</th>
           <td  class="align-middle clearfix col col-5" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="{{$picture}}" alt="">
             {{$Inactif_appointment->facebook}}  <span dir="ltr"  style=" position: absolute;

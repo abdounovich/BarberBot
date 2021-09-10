@@ -62,7 +62,6 @@
         <tr @if ($actifTime>=$Today_appointment->debut && $actifTime<$Today_appointment->fin)
              class="bg-deuxieme text-color" 
         @endif>
-    <input type="hidden" name="" value="   ">
          
           <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="{{$picture}}" alt="">
             <span  dir="ltr" style=" 

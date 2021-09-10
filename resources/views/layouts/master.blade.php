@@ -55,11 +55,21 @@ background-color:{{Setting::get('theme.deuxieme')}};
 
 
   
-
     .btn-deuxieme{
       background-color:{{Setting::get('theme.deuxieme')}};
     }
+ 
+    .text-color{
+      color:{{Setting::get('theme.text-color')}};
+    }
+ 
+ 
 
+    .text-premier{
+      color:{{Setting::get('theme.premier')}};
+    }
+ 
+ 
 
     </style>
     </head>
