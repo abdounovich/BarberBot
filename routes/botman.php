@@ -2,6 +2,7 @@
 use App\Type;
 use App\Client;
 use Carbon\Carbon;
+use Setting;
 use App\Appointment;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Config;
