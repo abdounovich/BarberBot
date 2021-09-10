@@ -3,13 +3,12 @@
 
   <div class="row mt-5">
     @if ($Tomorow_appointments->count()=='0')
-        <div  class="col col-12 bg-dark text-white mt-5  " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لنهار الغد</h2></div>
+        <div  class="col col-12 bg-premier text-color mt-5  " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لنهار الغد</h2></div>
    @else
-    <h3 class="p-2 text-white">مواعيد الغد </h3>
-    <table class="table table-striped table-dark"style="opacity:0.9">
-      <thead class=" bg-success text-right">
+    <h3 class="p-2 text-color">مواعيد الغد </h3>
+    <table class="table bg-deuxieme text-color"style="opacity:0.9">
+      <thead class=" bg-premier text-deuxieme text-right">
         <tr>
-          <th scope="col">#</th>          
 
           <th scope="col">الفيسبوك</th>
           
@@ -45,8 +44,7 @@
               $picture = $userInfo['profile_pic'] ;
     @endphp  
         <tr>
-          <th scope="row">{{ $loop->index+1 }}
-          </th>
+        
         
           <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="{{$picture}}" alt="">
             {{$Tomorow_appointment->facebook}}  <span dir="ltr"  style=" position: absolute;
@@ -61,7 +59,7 @@
         {{--   <form action="{{route("client.editpoints",$Tomorow_appointment->client->id)}}" method="post">
             @csrf
           <input type="text" class=" form-control " name="points" value="{{$Tomorow_appointment->client->points}}" id="">            
-          <button class="btn btn-primary" type="submit">تغيير</button>
+          <button class="btn btn-premier" type="submit">تغيير</button>
 
         </form> --}}</td>
          

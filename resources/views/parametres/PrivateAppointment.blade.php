@@ -1,4 +1,4 @@
- <h3 class="text-center bg-maron p-4 rounded text-dark mt-4">حجز موعد خاص</h3>
+ <h3 class="text-center bg-premier p-4 rounded text-dark mt-4">حجز موعد خاص</h3>
 
 
 <div class="text-right bg-dark p-2" >
@@ -6,7 +6,7 @@
 
 
 
- <form  method="post" action="Add-private-appointment">
+ <form  method="post" enctype="multipart/form-data" action="Add-private-appointment" >
     @csrf
     <div class="m-4">
         
@@ -49,7 +49,7 @@
     
     
     
-    <h3 class="text-center bg-maron p-4 rounded text-dark mt-4">المواعيد الخاصة  </h3>
+    <h3 class="text-center bg-premier p-4 rounded text-dark mt-4">المواعيد الخاصة  </h3>
 
     <table class="table bg-dark text-white">
         <thead>

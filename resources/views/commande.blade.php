@@ -12,7 +12,7 @@
   </head>
   <body>
 
-    <a href="/add" class="btn btn-primary"  type="button">Text</a>
+    <a href="/add" class="btn btn-premier"  type="button">Text</a>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -15,7 +15,7 @@
 
 <div class="mt-5">
 
-    <h3 class="text-center bg-maron p-4 rounded text-dark mt-4">التحكم في البرنامج</h3>
+    <h3 class="text-center bg-premier p-4 rounded text-dark mt-4">التحكم في البرنامج</h3>
 
  <form action="{{url('/parametres/update/')}}" method="post">
 

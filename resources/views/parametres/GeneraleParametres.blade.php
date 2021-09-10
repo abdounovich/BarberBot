@@ -1,7 +1,7 @@
 
 <div class="container">
     
-<h3 class="text-center bg-maron p-4 rounded text-dark mt-4">  إعدادات عامة</h3>
+<h3 class="text-center bg-premier p-4 rounded text-dark mt-4">  إعدادات عامة</h3>
 
 
 <div class="text-right bg-dark p-2" >
@@ -12,13 +12,13 @@
  <form  method="post" action="edit-generale-parametre" enctype="multipart/form-data">
     @csrf
 <div class="m-4">        
-    <label class="h4 text-white " for="primary">لون الزر الأساسي :</label>
-    <input class="form-control "  value="{{Setting::get('theme.primary')}}" type="color" name="primary" id="primary">
+    <label class="h4 text-white " for="premier">لون الزر الأساسي :</label>
+    <input class="form-control "  value="{{Setting::get('theme.premier')}}" type="color" name="premier" id="premier">
 </div>
 
 <div class="m-4">        
-    <label class="h4 text-white " for="secondary">لون الزر الثانوي  :</label>
-    <input class="form-control " value="{{Setting::get('theme.secondary')}}"  type="color" name="secondary" id="secondary">
+    <label class="h4 text-white " for="deuxieme">لون الزر الثانوي  :</label>
+    <input class="form-control " value="{{Setting::get('theme.deuxieme')}}"  type="color" name="deuxieme" id="deuxieme">
 </div>
 
 <div class="m-4">        
@@ -40,8 +40,11 @@ src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-13196
 src="{{Setting::get('theme.bg-image')}}"
 @endIf
 
+
 alt="" width="200" height="200">
 </a>
+<input value="{{Setting::get('theme.bg-image')}}" class="form-control" type="hidden" name="image">
+
 </div>
 
 </div>

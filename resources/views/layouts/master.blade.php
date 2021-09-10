@@ -23,9 +23,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+        
+        
         <style>
 
-      
     body{
     
     background:url(https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg) ;background-repeat: no-repeat;
@@ -34,20 +35,32 @@
     
     font-family: 'Cairo', sans-serif;
 }
-    .bg-maron{
-background-color: 
-#FFE3C7;
+    .bg-premier{
+background-color:{{Setting::get('theme.premier')}};
+
     }
 
 
-    .text-maron{
-      color:#FFE3C7;
-    }
-
-    .btn-maron{
-      background-color:#FFE3C7;
+   
+    .btn-premier{
+      background-color:{{Setting::get('theme.premier')}};
     }
  
+
+
+    .bg-deuxieme{
+background-color:{{Setting::get('theme.deuxieme')}};
+
+    }
+
+
+  
+
+    .btn-deuxieme{
+      background-color:{{Setting::get('theme.deuxieme')}};
+    }
+
+
     </style>
     </head>
     <body dir="rtl">
@@ -72,15 +85,15 @@ background-color:
        <div class="container  ">
             <div class="row ">
               <div class="col p-4 btn-group">
-                <a class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"   href="/"><i class=" p-2 fa fa-home"></i> </a>
+                <a class=" col col-2 text-deuxieme btn btn-premier m-2 p-2 " style="font-size: 60px"   href="/"><i class=" p-2 fa fa-home"></i> </a>
 
-<a href="/main" class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"><i class=" p-2 fa fa-calendar"></i></a> 
+<a href="/main" class=" col col-2 text-text-deuxieme btn btn-premier m-2 p-2 " style="font-size: 60px"><i class=" p-2 fa fa-calendar"></i></a> 
 
-            <a href="/clients" class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"> <i class=" p-2 fa fa-users"></i></a>
-            <a href="/types" class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"><i class=" p-2 fa fa-server"></i></a>
-            <a class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"   href="/sendMsg/0/"><i class=" p-2 fa fa-comments"></i> </a>
+            <a href="/clients" class=" col col-2 text-text-deuxieme btn btn-premier m-2 p-2 " style="font-size: 60px"> <i class=" p-2 fa fa-users"></i></a>
+            <a href="/types" class=" col col-2 text-text-deuxieme btn btn-premier m-2 p-2 " style="font-size: 60px"><i class=" p-2 fa fa-server"></i></a>
+            <a class=" col col-2 text-text-deuxieme btn btn-premier m-2 p-2 " style="font-size: 60px"   href="/sendMsg/0/"><i class=" p-2 fa fa-comments"></i> </a>
 
-            <a href="/parametres" class=" col col-2 text-dark btn btn-maron m-2 p-2 " style="font-size: 60px"> <i class=" p-2 fa fa-wrench"></i></a> 
+            <a href="/parametres" class=" col col-2 text-text-deuxieme btn btn-premier m-2 p-2 " style="font-size: 60px"> <i class=" p-2 fa fa-wrench"></i></a> 
 
 
 

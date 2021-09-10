@@ -58,7 +58,7 @@
             <form action="{{route("client.editpoints",$client->id)}}" method="post">
               @csrf
             <input type="text" name="points" value="{{$client->points}}" id="">            
-            <button class="btn btn-primary" type="submit">تغيير</button>
+            <button class="btn btn-premier" type="submit">تغيير</button>
 
           </form>
 

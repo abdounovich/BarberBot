@@ -1,12 +1,11 @@
   <div class="row mt-5">
     @if ($AfterTomoro_appointments->count()=='0')
-        <div  class="col col-12 bg-dark text-white mt-5  " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لبعد الغد</h2></div>
+        <div  class="col col-12 bg-dark text-color mt-5  " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لبعد الغد</h2></div>
    @else
-    <h3 class="p-2 text-white">مواعيد بعد غد </h3>
-    <table class="table table-striped table-dark"style="opacity:0.9">
-      <thead class=" bg-success text-right">
+    <h3 class="p-2 text-color">مواعيد بعد غد </h3>
+    <table class="table  bg-deuxieme text-color"style="opacity:0.9">
+      <thead class=" bg-premier text-deuxieme text-right">
         <tr>
-          <th scope="col">#</th>          
 
           <th scope="col">الفيسبوك</th>
           
@@ -43,7 +42,6 @@
     @endphp  
     
     <tr>
-          <th scope="row">{{ $loop->index +1}}</th>
           
 
 
@@ -60,7 +58,7 @@
            {{--  <form action="{{route("client.editpoints",$AfterTomoro_appointment->client->id)}}" method="post">
               @csrf
             <input type="text" class=" form-control" name="points" value="{{$AfterTomoro_appointment->client->points}}" id="">            
-            <button class="btn btn-primary" type="submit">تغيير</button>
+            <button class="btn btn-premier" type="submit">تغيير</button>
 
           </form> --}}</td>
 

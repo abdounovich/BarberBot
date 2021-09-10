@@ -4,13 +4,13 @@
 
   <div class="row mt-5 mb-5">
     @if ($Inactif_appointments->count()=='0')
-    <div  class="col col-12 text-white bg-dark mt-5" style="opacity: 0.9"><h2 class="p-4 float-right">   لا توجد مواعيد سابقة </h2></div>
+    <div  class="col col-12 text-color bg-dark mt-5" style="opacity: 0.9"><h2 class="p-4 float-right">   لا توجد مواعيد سابقة </h2></div>
 
    
 @else
-    <h3 class="p-2 text-white">المواعيد السابقة :</h3>
-    <table class="table table-striped table-dark"style="opacity:0.9">
-      <thead class=" bg-success text-right">
+    <h3 class="p-2 text-color">المواعيد السابقة :</h3>
+    <table class="table table-striped bg-premier"style="opacity:0.9">
+      <thead class=" bg-premier text-deuxieme text-right">
         <tr>
           <th scope="col">#</th>          
 
@@ -45,7 +45,7 @@
    <form action="{{route("client.editpoints",$Inactif_appointment->client->id)}}" method="post">
     @csrf
   <td><input type="text" class=" form-control " name="points" value="{{$Inactif_appointment->client->points}}" id="">            
-  </td><td><button class="btn btn-primary " type="submit">تغيير</button>
+  </td><td><button class="btn btn-premier " type="submit">تغيير</button>
 </td>
 </form>
           </td>

@@ -82,26 +82,35 @@ return view('parametres.index');
     public function    update_generale_parametre(Request $request)
     {
 
-        $primary=$request->get('primary');
-        $secondary=$request->get('secondary');
+
+
+          
+
+
+
+        $premier=$request->get('premier');
+        $deuxieme=$request->get('deuxieme');
         $text_color=$request->get('text-color');
 
 
         if ($request->isMethod('post')) 
                  
         {
+
+            if($request->hasFile('bg-image')){
+
          $image_name = $request->file('bg-image')->getRealPath();
          Cloudder::upload($image_name, null);
          list($width, $height) = getimagesize($image_name);
          $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
          $bg_image=$image_url;
-         dd($bg_image) ;
-         }
-
+            }
+else{            $bg_image=$request->get('image');
+}
 
         Setting::set("theme", [
-            'primary'=>$primary,
-            'secondary'=> $secondary,
+            'premier'=>$premier,
+            'deuxieme'=> $deuxieme,
             'text-color' => $text_color,
             'bg-image' => $bg_image,
                 ]);
@@ -110,7 +119,7 @@ return view('parametres.index');
                 return back()->with("success"," لقد تم حفظ البيانات بنجاح");
 
             }
-     
+        }
     
     /**
      * Update the specified resource in storage.
