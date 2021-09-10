@@ -21,7 +21,7 @@ use App\Appointment;
 
 
 
-Route::get('/add','AppointmentController@AddPFunction');
+Route::get('/addPoints','AppointmentController@addPoints');
 
 Auth::routes();
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
@@ -39,11 +39,11 @@ Route::post('/types','TypeController@store')
 ->middleware('auth');
 Route::get('/types','TypeController@index')
 ->middleware('auth');
-Route::get('/test/{type}/D1/{username}/{Cid}','testController@today')
+Route::get('/test/{type}/D1/{username}/{Cid}','AppointmentController@today')
 ;
-Route::get('/test/{type}/D2/{username}/{Cid}','testController@tomorrow')
+Route::get('/test/{type}/D2/{username}/{Cid}','AppointmentController@tomorrow')
 ;
-Route::get('/test/{type}/D3/{username}/{Cid}','testController@afterTomorrow')
+Route::get('/test/{type}/D3/{username}/{Cid}','AppointmentController@afterTomorrow')
 ;
 Route::get('/parametres','SettingController@index')
 ->middleware('auth');
@@ -51,10 +51,10 @@ Route::get('/parametres','SettingController@index')
 
 
 
-Route::post('/test2','testController@sendTextMessage')
+Route::post('/confirmationMessage','AppointmentController@confirmationMessage')
 ;
 
-Route::get('/tester','testController@func')
+Route::get('/reminder','AppointmentController@reminder')
 ;
 
 Route::get('/delete/{id}','TypeController@supprimer')
@@ -74,9 +74,6 @@ Route::get('/annulerByAdmin/{id}','AppointmentController@AnnulerByAdmin')
 Route::get('/','HomeController@index')
 ->middleware('auth');
 
-Route::get('/commande', function () {
-    return view('commande') ;
-});
 
 
 
@@ -90,7 +87,6 @@ Route::post('/edit-generale-parametre','SettingController@update_generale_parame
 ->middleware('auth');
 
 Route::get('/testC','HomeController@test');
-Route::get('/abcd','TestController@try');
 Route::post('/sendMsg/{id}','ClientController@sendMessageToClient');
 Route::get('/sendMsg/{id}','ClientController@sendMessageToClientView');
 Route::post('/parametres/{id}','SettingController@update');
@@ -100,5 +96,9 @@ Route::post('/parametres/{id}','SettingController@update');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
 
 

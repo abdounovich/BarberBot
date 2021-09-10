@@ -1,10 +1,8 @@
 
 
-  
-
   <div class="row mt-5 mb-5">
     @if ($Inactif_appointments->count()=='0')
-    <div  class="col col-12 text-color bg-dark mt-5" style="opacity: 0.9"><h2 class="p-4 float-right">   لا توجد مواعيد سابقة </h2></div>
+    <div  class="col col-12 text-dark bg-dark mt-5" style="opacity: 0.9"><h2 class="p-4 float-right">   لا توجد مواعيد سابقة </h2></div>
 
    
 @else
@@ -12,7 +10,6 @@
     <table class="table  bg-deuxieme " style="opacity:0.9 ">
       <thead class=" bg-premier text-deuxieme text-right">
         <tr>
-          <th scope="col">#</th>          
 
           <th scope="col">الفيسبوك</th>
           <th scope="col"></th>
@@ -31,7 +28,6 @@
                   $picture = $userInfo['profile_pic'] ;
         @endphp  
         <tr class="bg-deuxieme text-color" >
-          <th scope="row">{{ $loop->index+1 }}</th>
           <td  class="align-middle clearfix col col-5" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="{{$picture}}" alt="">
             {{$Inactif_appointment->facebook}}  <span dir="ltr"  style=" position: absolute;
             top:1px;
@@ -68,9 +64,9 @@
 
 
 
-<div class=" container">
+<div class=" container ">
      <div  class="row d-flex justify-content-center">
-     <div  >{{$Inactif_appointments->links('vendor.pagination.bootstrap-4')}}
+     <div class="text-dark"  >{{$Inactif_appointments->links('vendor.pagination.bootstrap-4')}}
     </div>
    </div> 
 </div>

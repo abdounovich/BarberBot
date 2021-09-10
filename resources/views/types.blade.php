@@ -13,13 +13,12 @@
 
 
 
-    <div class=" container mt-5">
         <div class="row mt-5">
             <h2 class=" text-white p-2">الخدمات  :</h2>
-            <table class="table table-dark table-hover" style="opacity: 0.9 ">
- <thead class=" bg-success text-center">
+            <table class="table bg-deuxieme text-color" style="opacity: 0.9 ">
+ <thead class=" bg-premier text-center">
 
-                    <tr>
+                    <tr class="text-dark">
                       <th>الخدمة    </th>
                       <th>السعر </th>
                       <th>المدة </th>
@@ -54,7 +53,7 @@
                 
             </table>
         </div>
-    </div>
+    
 
 
 
@@ -63,10 +62,8 @@
 
 
 
-
-        <div class="container">
             <div class="card mt-5 mb-5" style="opacity: 0.9"  >
-                <div class="card-header  bg-success text-white ">           <h4 class=" text-center p-2 ">أضف خدمة جديد </h4>
+                <div class="card-header  bg-premier text-dark ">           <h4 class=" text-center p-2 ">أضف خدمة جديد </h4>
                 </div>
                 <div class="card-body bg-dark text-white"> <div>
                     @if ($errors->any())
@@ -141,10 +138,7 @@
         
        </div>
        </div>
-    </div>
-
-
-
+  
    
    
 

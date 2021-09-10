@@ -23,55 +23,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
-        
-        
-        <style>
-
-    body{
-    
-    background:url(https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg) ;background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    
-    font-family: 'Cairo', sans-serif;
-}
-    .bg-premier{
-background-color:{{Setting::get('theme.premier')}};
-
-    }
-
-
-   
-    .btn-premier{
-      background-color:{{Setting::get('theme.premier')}};
-    }
- 
-
-
-    .bg-deuxieme{
-background-color:{{Setting::get('theme.deuxieme')}};
-
-    }
-
-
-  
-    .btn-deuxieme{
-      background-color:{{Setting::get('theme.deuxieme')}};
-    }
- 
-    .text-color{
-      color:{{Setting::get('theme.text-color')}};
-    }
- 
- 
-
-    .text-premier{
-      color:{{Setting::get('theme.premier')}};
-    }
- 
- 
-
-    </style>
+@include('layouts.style.custom-style')
     </head>
     <body dir="rtl">
       

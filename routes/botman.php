@@ -204,7 +204,19 @@ date_default_timezone_set("Africa/Algiers");
     $aftertomorrow=date("l", strtotime($today. ' + 2 day'));
    
  
-    if ($today=='Tuesday') {
+    $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
+ 
+    for ($i = 0; $i < 7; $i++){
+
+     
+
+     $active=$request->get($anglais[$i]."-active"); 
+       
+  
+
+
+
+    if ($today==$anglais[$i] and $active==0) {
    
         $arr[]=  ElementButton::create(' بعد غد  🕐')
         ->type('postback')
@@ -215,7 +227,7 @@ date_default_timezone_set("Africa/Algiers");
         ->payload('main2');
         
     }
-    elseif ($tomorrow=='Tuesday') {
+    elseif ($tomorrow==$anglais[$i] and $active==0) {
        
 
         $arr[]=  ElementButton::create(' بعد غد  🕐')
@@ -226,7 +238,7 @@ date_default_timezone_set("Africa/Algiers");
         ->type('postback')
         ->payload('main1');
     }
-    elseif ($aftertomorrow=='Tuesday') {
+    elseif ($aftertomorrow==$anglais[$i] and $active==0) {
      
         $arr[]=  ElementButton::create(' اليوم 🕐')
         ->type('postback')
@@ -249,7 +261,7 @@ date_default_timezone_set("Africa/Algiers");
         ->type('postback')
         ->payload('main3');
       
-     } 
+     }   }
     $bot->typesAndWaits(2);
  /* 
 

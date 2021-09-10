@@ -2,12 +2,12 @@
 
   <div class="row mt-5">
     @if ($Today_appointments->count()=='0')
-        <div  class="col col-12 bg-premier text-color mt-5 " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لنهار اليوم</h2></div>
+        <div  class="col col-12 bg-premier text-dark mt-5 " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لنهار اليوم</h2></div>
    @else
     <h3 class="p-2 text-color">مواعيد اليوم </h3>
-    <table class="table  bg-deuxieme " style="opacity:0.9 ">
+    <table class="table  bg-deuxieme text-color " style="opacity:0.9 ">
       <thead class=" bg-premier text-deuxieme text-right">
-        <tr>
+        <tr class="text-dark">
 
           <th scope="col">الفيسبوك</th>
           <th scope="col"> الحلاقة </th>

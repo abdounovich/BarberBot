@@ -262,7 +262,7 @@ $debut=date("Y-m-d H:i:s", (strtotime(date($debut)) + $pas));
 
 
     
-<form id="myForm" method="POST" action="/test2">
+<form id="myForm" method="POST" action="/confirmationMessage">
     @csrf
 
 

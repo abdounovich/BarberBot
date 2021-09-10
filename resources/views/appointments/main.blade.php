@@ -18,9 +18,9 @@
 @endif
 
 
-@include('appointments.today')
+ @include('appointments.today')
 @include('appointments.tomorrow')
-@include('appointments.afterTomorow')
+@include('appointments.afterTomorow') 
 @include('appointments.all')
 
 
