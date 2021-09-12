@@ -1,6 +1,6 @@
   <div class="row mt-5">
     @if ($AfterTomoro_appointments->count()=='0')
-        <div  class="col col-12 bg-dark text-dark mt-5  " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لبعد الغد</h2></div>
+        <div  class="col col-12 bg-premier text-dark mt-5  " style="opacity: 0.9"><h2 class="p-4 float-right">لا توجد مواعيد لبعد الغد</h2></div>
    @else
     <h3 class="p-2 text-color">مواعيد بعد غد </h3>
     <table class="table  bg-deuxieme " style="opacity:0.9 ">

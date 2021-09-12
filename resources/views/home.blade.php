@@ -32,7 +32,7 @@
             <div class="h3 p-2 text-light    d-flex align-self-center"> المواعيد   </div>
             <div class="h1 text-light  d-flex align-self-center">{{$appointments->count()}}</div>
     
-            <a  href="/rdv"  class=" text-deuxieme m-4 p-2 btn btn-premier  btn d-flex align-self-center">تصفح الجميع</a>
+            <a  href="/main"  class=" text-deuxieme m-4 p-2 btn btn-premier  btn d-flex align-self-center">تصفح الجميع</a>
              </div>
             </div>
 

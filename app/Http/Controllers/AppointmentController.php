@@ -10,7 +10,8 @@ use Carbon\Carbon;
 use App\Appointment;
 use Illuminate\Http\Request;
 use Config;
-
+use Setting;
+use App\Type;
 class AppointmentController extends Controller
 {
 
@@ -111,7 +112,7 @@ $config=Config::get('app.url');
     $A->ActiveType=$num;
     $A->save();
 
-    return redirect('/appointments/main')   ; }
+    return redirect('/main')   ; }
     public function index()
     {
 
@@ -406,25 +407,23 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
       date_default_timezone_set("Africa/Algiers");
       $date=date("l");
   
-  
+
       
-       $days = array('Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday');
       
-      foreach ($days as $day) {
-        if ($date==$day) {
-          if (Setting::get($day.'.active')==1) {
-          $debut=Setting::get($day.'.debut');
-          $fin=Setting::get($day.'.fin');
-          $d_pause=Setting::get($day.'.debut-repos');
-          $f_pause=Setting::get($day.'.fin-repos');
+          if (Setting::get($date.'.active')==1) {
+          $debut=Setting::get($date.'.debut');
+          $fin=Setting::get($date.'.fin');
+          $d_pause=Setting::get($date.'.debut-repos');
+          $f_pause=Setting::get($date.'.fin-repos');
+         
           }
           else {
             $debut="00:01";
             $fin="00:04";
             $d_pause="00:02";
             $f_pause="00:03";
-          }}
-      } 
+          }
+      
           
          $jour=date("Y-m-d");
   
@@ -547,23 +546,20 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
       
       
       
-      $days = array('Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday');
-      
-      foreach ($days as $day) {
-        if ($date==$day) {
-          if (Setting::get($day.'.active')==1) {
-          $debut=Setting::get($day.'.debut');
-          $fin=Setting::get($day.'.fin');
-          $d_pause=Setting::get($day.'.debut-repos');
-          $f_pause=Setting::get($day.'.fin-repos');
-          }
-          else {
-            $debut="00:01";
-            $fin="00:04";
-            $d_pause="00:02";
-            $f_pause="00:03";
-          }
-      } }
+     
+      if (Setting::get($date.'.active')==1) {
+        $debut=Setting::get($date.'.debut');
+        $fin=Setting::get($date.'.fin');
+        $d_pause=Setting::get($date.'.debut-repos');
+        $f_pause=Setting::get($date.'.fin-repos');
+       
+        }
+        else {
+          $debut="00:01";
+          $fin="00:04";
+          $d_pause="00:02";
+          $f_pause="00:03";
+        }
          $jour=date("Y-m-d");
   
          $tomorrow=date('Y-m-d', strtotime($jour. ' + 1 day'));
@@ -685,22 +681,24 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
       
           
        
-          $days = array('Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday');
+
+
+          if (Setting::get($date.'.active')==1) {
+            $debut=Setting::get($date.'.debut');
+            $fin=Setting::get($date.'.fin');
+            $d_pause=Setting::get($date.'.debut-repos');
+            $f_pause=Setting::get($date.'.fin-repos');
+           
+            }
+            else {
+              $debut="00:01";
+              $fin="00:04";
+              $d_pause="00:02";
+              $f_pause="00:03";
+            }
+
       
-      foreach ($days as $day) {
-        if ($date==$day) {
-          if (Setting::get($day.'.active')==1) {
-          $debut=Setting::get($day.'.debut');
-          $fin=Setting::get($day.'.fin');
-          $d_pause=Setting::get($day.'.debut-repos');
-          $f_pause=Setting::get($day.'.fin-repos');
-          }
-          else {
-            $debut="00:01";
-            $fin="00:04";
-            $d_pause="00:02";
-            $f_pause="00:03";
-          }} 
+       
       
          $jour=date("Y-m-d");
          $afterTommorow=date('Y-m-d', strtotime($jour. ' + 2 day'));
@@ -802,8 +800,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
   
   }
-    }
-  
+    
   
   public function reminder(){
   

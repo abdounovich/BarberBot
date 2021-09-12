@@ -2,7 +2,7 @@
 use App\Type;
 use App\Client;
 use Carbon\Carbon;
-use Setting;
+
 use App\Appointment;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Config;
@@ -205,64 +205,47 @@ date_default_timezone_set("Africa/Algiers");
     $aftertomorrow=date("l", strtotime($today. ' + 2 day'));
    
  
-    $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
  
-    for ($i = 0; $i < 7; $i++){
-
+  
      
 
-     $active=$request->get($anglais[$i]."-active"); 
+     $today_statue=Setting::get($today.".active"); 
+     $tomorrow_statue=Setting::get($tomorrow.".active"); 
+     $aftertomorrow_statue=Setting::get($aftertomorrow.".active"); 
+
+ 
+     if ($aftertomorrow_statue==1) {     
+        $arr[]=  ElementButton::create(' بعد غد  🕐')
+               ->type('postback')
+               ->payload('main3');
        
-  
+           }
 
+           if ($tomorrow_statue==1) {
+       
 
+            $arr[]=  ElementButton::create(' يوم الغد  🕐')
+             ->type('postback')
+             ->payload('main2');
+           
+          
+         }
 
-    if ($today==$anglais[$i] and $active==0) {
+    if ($today_statue==1) {
    
-        $arr[]=  ElementButton::create(' بعد غد  🕐')
-        ->type('postback')
-        ->payload('main3');
-      
-        $arr[]=  ElementButton::create('يوم الغد  🕐')
-        ->type('postback')
-        ->payload('main2');
-        
-    }
-    elseif ($tomorrow==$anglais[$i] and $active==0) {
-       
-
-        $arr[]=  ElementButton::create(' بعد غد  🕐')
-        ->type('postback')
-        ->payload('main3');
-      
         $arr[]=  ElementButton::create(' اليوم  🕐')
         ->type('postback')
         ->payload('main1');
     }
-    elseif ($aftertomorrow==$anglais[$i] and $active==0) {
-     
-        $arr[]=  ElementButton::create(' اليوم 🕐')
-        ->type('postback')
-        ->payload('main1');
-      
-        $arr[]=  ElementButton::create(' يوم الغد  🕐')
-        ->type('postback')
-        ->payload('main2');
 
-
+    if ($today_statue==0 and $tomorrow_statue==0 and $aftertomorrow_statue==0) {
+   
+       $bot->reply("المحل في عطلة , شكرا على التفهم ");
+       return;
     }
-    else{  
-        $arr[]=  ElementButton::create('     اليوم 🕐')
-        ->type('postback')
-        ->payload('main1');
-        $arr[]=  ElementButton::create(' يوم الغد  🕐')
-        ->type('postback')
-        ->payload('main2');
-          $arr[]=  ElementButton::create(' بعد غد  🕐')
-        ->type('postback')
-        ->payload('main3');
-      
-     }   }
+
+
+      }
     $bot->typesAndWaits(2);
  /* 
 
@@ -271,7 +254,7 @@ date_default_timezone_set("Africa/Algiers");
 
 
      $bot->reply(ButtonTemplate::create('  من فضلك إختر يوم موعدك  👇👇')->addButtons($arr)); 
-    }
+    
 });
 
 /* $botman->hears('C([0-9]+)', function ($bot, $number) {
