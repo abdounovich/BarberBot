@@ -39,11 +39,11 @@ Route::post('/types','TypeController@store')
 ->middleware('auth');
 Route::get('/types','TypeController@index')
 ->middleware('auth');
-Route::get('/test/{type}/D1/{username}/{Cid}','AppointmentController@today')
+Route::get('/take_appointment/{type}/D1/{username}/{Cid}','AppointmentController@today')
 ;
-Route::get('/test/{type}/D2/{username}/{Cid}','AppointmentController@tomorrow')
+Route::get('/take_appointment/{type}/D2/{username}/{Cid}','AppointmentController@tomorrow')
 ;
-Route::get('/test/{type}/D3/{username}/{Cid}','AppointmentController@afterTomorrow')
+Route::get('/take_appointment/{type}/D3/{username}/{Cid}','AppointmentController@afterTomorrow')
 ;
 Route::get('/parametres','SettingController@index')
 ->middleware('auth');
@@ -86,16 +86,19 @@ Route::post('/parametres/update','SettingController@update')
 Route::post('/edit-generale-parametre','SettingController@update_generale_parametre')
 ->middleware('auth');
 
-Route::get('/testC','HomeController@test');
-Route::post('/sendMsg/{id}','ClientController@sendMessageToClient');
-Route::get('/sendMsg/{id}','ClientController@sendMessageToClientView');
-Route::post('/parametres/{id}','SettingController@update');
+Route::post('/sendMsg/{id}','ClientController@sendMessageToClient')->middleware('auth');
+;
+Route::get('/sendMsg/{id}','ClientController@sendMessageToClientView')->middleware('auth');
+;
+Route::post('/parametres/{id}','SettingController@update')->middleware('auth');
+;
 
 
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+;
 
 
 
