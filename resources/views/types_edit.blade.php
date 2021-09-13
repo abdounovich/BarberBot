@@ -12,7 +12,7 @@
       
         <div class="container">
             <div class="card mt-5 mb-5" style="opacity: 0.9"  >
-                <div class="card-header  bg-success text-white ">           <h4 class=" text-center p-2 "> تعديل  " {{$type->type}} "  </h4>
+                <div class="card-header  bg-premier text-color ">           <h4 class=" text-center p-2 "> تعديل  " {{$type->type}} "  </h4>
                 </div>
                 <div class="card-body bg-dark text-white"> <div>
                     @if ($errors->any())
