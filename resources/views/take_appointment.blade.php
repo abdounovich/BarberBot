@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.classycountdown@1.0.1/css/jquery.classycountdown.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery.classycountdown@1.0.1/js/jquery.classycountdown.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    @include('layouts.style.custom-style')
 
 <style>
   .card {
@@ -58,7 +59,6 @@ font-weight:bold;
 
 
 </style>
-@include('layouts.style.custom-style')
 
 <!-- Optionally add this to use a skin : -->
     <!-- Styles -->
