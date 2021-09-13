@@ -4,11 +4,11 @@
 
     body{
     
-    background-repeat: no-repeat;
+    
+    background:url({{Setting::get('theme.bg-image')}}) ;
+background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background:url({{Setting::get('theme.bg-image')}}) ;
-
     
     font-family: 'Cairo', sans-serif;
 }
