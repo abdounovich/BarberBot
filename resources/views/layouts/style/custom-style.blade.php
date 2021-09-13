@@ -4,13 +4,12 @@
 
     body{
     
-    
-    background:url({{Setting::get('theme.bg-image')}}) ;
+        font-family: 'Cairo', sans-serif;
 background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    
-    font-family: 'Cairo', sans-serif;
+        background:url({{Setting::get('theme.bg-image')}}) ;
+
 }
     .bg-premier{
 background-color:{{Setting::get('theme.premier')}};
