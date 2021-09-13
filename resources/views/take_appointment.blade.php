@@ -246,7 +246,7 @@ font-weight:bold;
 
 
     
-<form id="myForm" method="POST" action="/confirmationMessage">
+<form id="myForm" method="post" action="/confirmationMessage">
     @csrf
 
 
