@@ -2,7 +2,7 @@
 
   <div class="row mt-5 mb-5">
     @if ($Inactif_appointments->count()=='0')
-    <div  class="col col-12 text-dark bg-dark mt-5" style="opacity: 0.9"><h2 class="p-4 float-right">   لا توجد مواعيد سابقة </h2></div>
+    <div  class="col col-12 bg-premier text-dark mt-5 " style="opacity: 0.9"><h2 class="p-4 float-right">   لا توجد مواعيد سابقة </h2></div>
 
    
 @else
