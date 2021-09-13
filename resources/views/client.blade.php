@@ -21,6 +21,7 @@
     <script src="{{URL::asset('js/jquery.throttle.js',true)}}"></script>
     <link href="{{URL::asset('css/jquery.classycountdown.css',true)}}" rel="stylesheet">
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
+@include('layouts.style.custom-style')
 
 <style>
   .card {
@@ -61,7 +62,6 @@ button:hover, a:hover {
 
 
 </style>
-@include('layouts.style.custom-style')
 
 <!-- Optionally add this to use a skin : -->
     <!-- Styles -->
