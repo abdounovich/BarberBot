@@ -32,15 +32,52 @@
     <style>
     
     body{
-        
-      
-        background:url('{{$image}}') ;
-    font-family: 'Cairo', sans-serif;
-    background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
+    
+  
+    background:url({{$image}}) ;
+font-family: 'Cairo', sans-serif;
+background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+    .bg-premier{
+background-color:{{Setting::get('theme.premier')}};
+
+    }
+
+
+   
+    .btn-premier{
+      background-color:{{Setting::get('theme.premier')}};
+    }
+ 
+
+
+    .bg-deuxieme{
+background-color:{{Setting::get('theme.deuxieme')}};
+
+    }
+
+
+  
+    .btn-deuxieme{
+      background-color:{{Setting::get('theme.deuxieme')}};
     
     }
+ 
+    .text-color{
+      color:{{Setting::get('theme.text-color')}};
+    }
+ 
+ 
+
+    .text-premier{
+      color:{{Setting::get('theme.premier')}};
+    }
+ 
+ 
+
   .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
