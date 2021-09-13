@@ -19,6 +19,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'botman',
+        'botman','https://barber-bot-dz.herokuapp.com/take_appointment',
     ];
 }
