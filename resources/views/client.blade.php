@@ -23,7 +23,8 @@
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
      
 @php
-$image=Setting::get('theme.bg-image')
+$image=Setting::get('theme.bg-image');
+echo $image;
 @endphp
 <style>
   .card {
@@ -65,7 +66,7 @@ button:hover, a:hover {
 body{
     
   
-    background:url({{$image}}) ;
+    background:url('{{$image}}') ;
 font-family: 'Cairo', sans-serif;
 background-repeat: no-repeat;
     background-attachment: fixed;
