@@ -2,13 +2,18 @@
         
         <style>
 
+body{
+    
+  
+    background:url({{Setting::get('theme.bg-image')}}) ;
+
+}
     body{
     
         font-family: 'Cairo', sans-serif;
 background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-        background:url({{Setting::get('theme.bg-image')}}) ;
 
 }
     .bg-premier{
