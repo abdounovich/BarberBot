@@ -124,6 +124,5 @@ return [
     */
     'whitelisted_domains' => [
         'https://petersfancyapparel.com',
-        'https://3814-105-110-109-41.ngrok.io',
     ],
 ];
