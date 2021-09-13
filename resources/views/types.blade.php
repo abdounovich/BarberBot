@@ -1,7 +1,7 @@
 
 @extends('layouts.master')
 
-@section('title', 'types_page')
+@section('title', 'Services ')
 
 
 
