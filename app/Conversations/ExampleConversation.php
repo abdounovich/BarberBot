@@ -157,10 +157,16 @@ if($Tos){
                 $this->say(ButtonTemplate::create(' ⏰ موعد حلاقتك  '.$this->mgg)
                 ->addButton(ElementButton::create(' 📅 الزمن المتبقي لموعدي')
                 ->url($this->config.'/client/'.$DbUsername->slug)
+                ->enableExtensions()
+                ->heightRatio('tall')
+                ->disableShare()
             
                 )
                 ->addButton(ElementButton::create(' 🎁 رصيدي')
                 ->url($this->config.'/client/'.$DbUsername->slug)
+                ->enableExtensions()
+                ->heightRatio('tall')
+                ->disableShare()
                 )
             );
                
