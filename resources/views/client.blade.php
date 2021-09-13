@@ -68,13 +68,14 @@ button:hover, a:hover {
 
 
 </style>
+@include('layouts.style.custom-style')
 
 <!-- Optionally add this to use a skin : -->
     <!-- Styles -->
 </head>
 <body dir="rtl">
 <div class="m-4">
-    <div  class=" card bg-success text-white  justify-content-center align-self-center align-items-center" style="opacity: 0.9">
+    <div  class=" card bg-premier text-color  justify-content-center align-self-center align-items-center" style="opacity: 0.9">
         @php
 
 
