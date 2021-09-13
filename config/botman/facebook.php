@@ -124,5 +124,6 @@ return [
     */
     'whitelisted_domains' => [
         'https://petersfancyapparel.com',
+       ' https://barber-bot-dz.herokuapp.com/',
     ],
 ];
