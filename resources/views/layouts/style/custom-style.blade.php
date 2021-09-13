@@ -7,7 +7,7 @@
 body{
     
   
-    background:url($image) ;
+    background:url({{$image}}) ;
 font-family: 'Cairo', sans-serif;
 background-repeat: no-repeat;
     background-attachment: fixed;
