@@ -25,7 +25,7 @@ class ExampleConversation extends Conversation
   
 
  
-    public function test()
+    public function remerciment()
 
 
 
@@ -180,13 +180,11 @@ if($Tos){
     
     {
 
-        $this->test();
+        $this->remerciment();
 
 
 
 
-       return;
-
-        $this->askType();
+       
     }
 }
