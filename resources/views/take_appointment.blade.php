@@ -75,66 +75,7 @@ font-weight:bold;
 
 
 
-{{-- @php
 
-date_default_timezone_set("Africa/Algiers");
-
-$debut="10:00";
-$debut=date("Y-m-d ").$debut.":00";
-$debut=date("Y-m-d H:i:s", strtotime(date($debut)));
-
-$fin="22:00";
-$fin=date("Y-m-d ").$fin.":00";
-$fin=date("Y-m-d H:i:s", strtotime(date($fin)));
-
-$pas=60*30;
-$arr=array();
-
-@endphp
-
-@while ($debut<$fin)
-
-@foreach ($appointments as $appointment ) 
-
-@php
-$d=date("Y-m-d H:i:s", strtotime($appointment->date." ".$appointment->debut.":00"));
-$f=date("Y-m-d H:i:s", strtotime($appointment->date." ".$appointment->fin.":00"));
-@endphp
-
-@if ($debut>=$d && $debut<$f) 
-
-<button class='btn btn-danger disabled' type='button'>{{$debut}}</button>
-
-@else
-
-<button class='btn btn-success' type='button'>{{$debut}}</button>
-
-@endif
-    
-@php
-$debut=date("Y-m-d H:i:s", (strtotime(date($debut)) + $pas));
-@endphp 
-
-@endforeach
-
-@endwhile
- --}}
- {{--    @foreach ($appointments as $appointment )   
-        @for ($i=0; $i <count($arr) ; $i++) 
-        @php
-        $arr2=array();
-        $d=date("Y-m-d H:i:s", strtotime($appointment->date." ".$appointment->debut.":00"));
-        $f=date("Y-m-d H:i:s", strtotime($appointment->date." ".$appointment->fin.":00"));
-        @endphp
-        @if ($arr[$i]>=$d && $arr[$i]<$f) 
-                <button class="btn btn-danger disabled" type="button">{{$arr[$i]}}</button>
-
-        
-        @else
-        
-        <button class="btn btn-success" type="button">{{$arr[$i]}}</button>
-
-        @endif @endfor @endforeach --}}
 
 
 @if ($OneApp>0) 
@@ -168,16 +109,16 @@ $debut=date("Y-m-d H:i:s", (strtotime(date($debut)) + $pas));
                 @switch($var)
                     @case(1)
                     
-                    <div  class="h3 bg-success text-white text text-center p-2 m-2  rounded" >المواعيد المتاحة اليوم  </div>
+                    <div  class="h3 bg-premier text-color text text-center p-2 m-2  rounded" >المواعيد المتاحة اليوم  </div>
 
                         @break
                     @case(2)
-            <div  class="h3 bg-success text-white text text-center p-2 m-2  rounded" > المواعيد المتاحة غدا   </div>
+            <div  class="h3 bg-premier text-color text text-center p-2 m-2  rounded" > المواعيد المتاحة غدا   </div>
 
                         @break
                   
                         @case(3)
-                        <div  class="h3 bg-success text-white text text-center p-2 m-2  rounded" >المواعيد المتاحة بعد غد  </div>
+                        <div  class="h3 bg-premier text-color text text-center p-2 m-2  rounded" >المواعيد المتاحة بعد غد  </div>
 
                      
                 @endswitch
