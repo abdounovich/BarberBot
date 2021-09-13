@@ -23,10 +23,7 @@
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
 
 <style>body{
-background:url(https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg) ;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
+
 font-family: 'Cairo', sans-serif;
 
 }
