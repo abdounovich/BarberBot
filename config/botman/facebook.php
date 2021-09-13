@@ -95,19 +95,12 @@ return [
                         [
 
                     'title' => ' ⁉ استفسار ',
-                    'type' => 'nested',
-                    'call_to_actions' => [
-                        [
-                            'title' => ' 💬 تواصل مع المبرمج',
-                            'type' => 'web_url',
-                            'url' => 'https://www.messenger.com/t/merahi.adjalile',
+                    'type' => 'web_url',
+                    'url' => 'https://www.messenger.com/t/merahi.adjalile',
                         ],
-                  [
-                            'title' => ' 👨‍🏫 شرح طريقة حجز موعد  ',
-                            'type' => 'postback',
-                            'payload' => 'steps',
-                           'webview_height_ratio'=>'compact'
-                        ]]],
+                  
+                            
+                     
                       
                        
             ],
