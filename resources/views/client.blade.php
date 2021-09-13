@@ -24,7 +24,6 @@
      
 @php
 $image=Setting::get('theme.bg-image');
-echo $image;
 @endphp
 <style>
   .card {
@@ -63,16 +62,7 @@ button:hover, a:hover {
 }
 
 
-body{
-    
-  
-    background:url('{{$image}}') ;
-font-family: 'Cairo', sans-serif;
-background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 
-}
     .bg-premier{
 background-color:{{Setting::get('theme.premier')}};
 
@@ -115,7 +105,15 @@ background-color:{{Setting::get('theme.deuxieme')}};
 <!-- Optionally add this to use a skin : -->
     <!-- Styles -->
 </head>
-<body dir="rtl">
+<body dir="rtl" background="
+    
+  
+    background:url('{{$image}}') ;
+background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+">
 <div class="m-4">
     <div  class=" card bg-premier text-color  justify-content-center align-self-center align-items-center" style="opacity: 0.9">
         @php
