@@ -244,11 +244,9 @@ font-weight:bold;
 
 
 
-
     
 <form id="myForm"  action="{{url('/confirmationMessage')}}" method="post">
     @csrf
-
 
 
 
