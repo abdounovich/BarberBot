@@ -26,6 +26,17 @@
 $image=Setting::get('theme.bg-image');
 @endphp
 <style>
+
+body{
+    
+  
+    background:url('{{$image}}') ;
+font-family: 'Cairo', sans-serif;
+background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
   .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
@@ -105,15 +116,7 @@ background-color:{{Setting::get('theme.deuxieme')}};
 <!-- Optionally add this to use a skin : -->
     <!-- Styles -->
 </head>
-<body dir="rtl" background="
-    
-  
-    background:url('{{$image}}') ;
-background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-
-">
+<body dir="rtl" >
 <div class="m-4">
     <div  class=" card bg-premier text-color  justify-content-center align-self-center align-items-center" style="opacity: 0.9">
         @php
