@@ -515,7 +515,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
         
          $var=1;
          $type=Type::find($type);
-         return view("test")->with('items',$items)
+         return view("take_appointment")->with('items',$items)
          ->with('var',$var)
          ->with('type',$type)
          ->with('jour',$jour)
@@ -650,7 +650,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
     
      $var=2;
      $type=Type::find($type);
-     return view("test")->with('items',$items)
+     return view("take_appointment")->with('items',$items)
      ->with('var',$var)
      ->with('type',$type)
      ->with('jour',$jour)
@@ -791,7 +791,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
                   if (!in_array($k, $items)&&!in_array($k, $arr2) ) {if ($d_pause<=$k && $k<$f_pause) {}else{$items[]=$k;}}}
            $var=3;
          $type=Type::find($type);
-         return view("test")->with('items',$items)
+         return view("take_appointment")->with('items',$items)
          ->with('var',$var)
          ->with('type',$type)
          ->with('jour',$jour)
