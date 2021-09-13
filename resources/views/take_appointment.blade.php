@@ -249,7 +249,6 @@ font-weight:bold;
 <form id="myForm" method="post" action="/confirmationMessage">
     @csrf
 
-    <input type="hidden" name="token" value="{{ $token }}">
 
 
 
