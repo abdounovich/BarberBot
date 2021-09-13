@@ -95,7 +95,7 @@ $array2=array();
     ->subtitle("السعر : ".$type2->prix.' دج ')
     ->image($type2->photo)
     ->addButton(ElementButton::create(' 📆 احجز موعدك الآن')
-    ->url($this->config.'/test/'.$type2->id.'/D'.$number."/".$full_name."/".$DbUsername->id)
+    ->url($this->config.'/take_appointment/'.$type2->id.'/D'.$number."/".$full_name."/".$DbUsername->id)
     ->heightRatio('tall')
     ->disableShare()
     ->enableExtensions());}
@@ -135,7 +135,7 @@ $DbUsername=Client::whereFacebook($full_name)->first();
      ->subtitle("السعر : ".$type->prix.' دج ')
      ->image($type->photo)
      ->addButton(ElementButton::create(' 📆 احجز موعدك الآن')
-     ->url($this->config.'/test/'.$type->id.'/D'.$number."/".$full_name."/".$DbUsername->id)
+     ->url($this->config.'/take_appointment/'.$type->id.'/D'.$number."/".$full_name."/".$DbUsername->id)
      ->heightRatio('tall')
      ->disableShare()
      ->enableExtensions());}
