@@ -26,9 +26,21 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.classycountdown@1.0.1/css/jquery.classycountdown.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery.classycountdown@1.0.1/js/jquery.classycountdown.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
-    @include('layouts.style.custom-style')
-
-<style>
+    @php
+    $image=Setting::get('theme.bg-image');
+    @endphp
+    <style>
+    
+    body{
+        
+      
+        background:url('{{$image}}') ;
+    font-family: 'Cairo', sans-serif;
+    background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    
+    }
   .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
