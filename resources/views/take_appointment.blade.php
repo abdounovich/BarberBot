@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>IK9 </title>
+    <title>Appointment </title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -27,14 +27,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery.classycountdown@1.0.1/js/jquery.classycountdown.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
 
-<style>body{
-background:url(https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg) ;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
-font-family: 'Cairo', sans-serif;
-
-}
+<style>
   .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
@@ -65,6 +58,7 @@ font-weight:bold;
 
 
 </style>
+@include('layouts.style.custom-style')
 
 <!-- Optionally add this to use a skin : -->
     <!-- Styles -->
