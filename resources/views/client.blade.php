@@ -22,11 +22,7 @@
     <link href="{{URL::asset('css/jquery.classycountdown.css',true)}}" rel="stylesheet">
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
 
-<style>body{
-
-font-family: 'Cairo', sans-serif;
-
-}
+<style>
   .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
