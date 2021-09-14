@@ -142,6 +142,25 @@ $afterTommorow=date('Y-m-d', strtotime($today. ' + 2 day'));
 
   
 
+
+
+
+
+
+
+
+  /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function c (Request $request)
+    {
+echo "ok";return;
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
