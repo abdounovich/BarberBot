@@ -346,7 +346,9 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   $client=Client::where("fb_id",$Cid)->first();
   $config=Config::get('app.url');
   
-  
+  echo $client->fb_id;
+  echo "ok";
+  return;
   
         $messageData = [
             "recipient" => [
