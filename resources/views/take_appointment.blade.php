@@ -241,11 +241,14 @@ font-weight:bold;
         
 
    
-
+<form action="/confirmationMessage" method="POST">
+@csrf
+<input type="submit" value="ok">
+</form>
 
 
     
-<form id=""  action="{{url('/confirmationMessage')}}" method="post">
+<form id=""  action="" method="post">
     @csrf
 
 

@@ -291,7 +291,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
   
     
-  
+  echo "ok"; return;
   
       $messageText=  $request->get('message');
       $Cid=$request->get('Cid');
