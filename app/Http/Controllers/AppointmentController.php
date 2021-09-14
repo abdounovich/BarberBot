@@ -341,15 +341,16 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   $addApp->save();
 
 
+  
 
-  $client=Client::find($Cid);
+  $client=Client::where("fb_id",$Cid)->first();
   $config=Config::get('app.url');
   
   
   
         $messageData = [
             "recipient" => [
-                "id" => $id,
+                "id" =>$client->fb_id,
             ],
             "message"=>[
               "attachment"=>[
