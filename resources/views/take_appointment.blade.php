@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <title>Appointment </title>
 
     <!-- Fonts -->
@@ -268,6 +268,30 @@ font-weight:bold;
 
     <script type="text/javascript">
 
+
+
+
+var request;
+var form = $("myForm");
+var data = {
+    'id': form.find('input[name="email"]').val(),
+    'debut': form.find('input[name="debut"]').val(),
+    'type': form.find('input[name="type"]').val(),
+    'jour': form.find('input[name="jour"]').val(),
+    'username': form.find('input[name="username"]').val(),
+    'Cid': form.find('input[name="Cid"]').val(),
+};
+var headers = {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
+request = $.ajax({
+    url: "/confirmationMessage",
+    type: "post",
+    headers: headers,
+    data: data
+});
+request.done(function (){
+});
 
 
 function getvalue() {
