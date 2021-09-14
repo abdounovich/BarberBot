@@ -201,7 +201,7 @@ font-weight:bold;
             </div>
             <div class="row">
                 <div class=" col col-12 ">
-                        <input type="button" class="btn btn-success" id="clc" onclick="sendMessage()" style="display: none; width:100%" value="  تأكــــيد الموعـــد ">
+                        <input type="button" class="btn btn-success" id="clc"  onclick="sendMessage()" style="display: none; width:100%" value="  تأكــــيد الموعـــد ">
                 </div>
                 </div>
             </div>
@@ -259,8 +259,7 @@ font-weight:bold;
    <input type="hidden" name="username" id="username" value="{{$username}}">
    <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
 
-
-
+<input type="submit" value="click">
 
              
   
