@@ -149,16 +149,7 @@ $afterTommorow=date('Y-m-d', strtotime($today. ' + 2 day'));
 
 
 
-  /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function c (Request $request)
-    {
-echo "ok";return;
-    }
+
 
 
     /**
@@ -310,7 +301,6 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
   
     
-  echo "ok"; return;
   
       $messageText=  $request->get('message');
       $Cid=$request->get('Cid');
@@ -351,8 +341,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   $addApp->save();
 
 
-echo 'ok';
-  return;
+
   $client=Client::find($Cid);
   $config=Config::get('app.url');
   
