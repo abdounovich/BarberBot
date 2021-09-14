@@ -274,13 +274,18 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
 
 
 
-   /**
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+  /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-  
     public function confirmationMessage(Request $request)
     {
   
@@ -325,6 +330,10 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
     
   
   $addApp->save();
+
+
+echo 'ok';
+  return;
   $client=Client::find($Cid);
   $config=Config::get('app.url');
   
