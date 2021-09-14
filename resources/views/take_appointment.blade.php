@@ -285,17 +285,13 @@ function getvalue() {
         function sendMessage() {
             document.getElementById("myForm").submit();
 
-            var delayInMilliseconds = 5000; //1 second
-
-setTimeout(function() {
-   MessengerExtensions.requestCloseBrowser(function success() {
+        
+            MessengerExtensions.requestCloseBrowser(function success() {
 
              }, function error(err) {
 
              });
-        } //your code to be executed after 1 second
-},
-          
+        }
 
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
