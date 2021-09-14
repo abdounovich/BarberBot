@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>Appointment </title>
 
     <!-- Fonts -->
@@ -201,7 +201,7 @@ font-weight:bold;
             </div>
             <div class="row">
                 <div class=" col col-12 ">
-                        <input type="button" class="btn btn-success" id="clc"  onclick="sendMessage()" style="display: none; width:100%" value="  تأكــــيد الموعـــد ">
+                        <input type="button" class="btn btn-success" id="clc" onclick="sendMessage()" style="display: none; width:100%" value="  تأكــــيد الموعـــد ">
                 </div>
                 </div>
             </div>
@@ -241,15 +241,14 @@ font-weight:bold;
         
 
    
-<form action="/c" method="POST">
-@csrf
-<input type="submit" value="ok">
-</form>
+
+
 
 
     
-<form id=""  action="" method="post">
+<form id="myForm"  action="{{url('/confirmationMessage')}}" method="post">
     @csrf
+
 
 
 
@@ -262,7 +261,8 @@ font-weight:bold;
    <input type="hidden" name="username" id="username" value="{{$username}}">
    <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
 
-<input type="submit" value="click">
+
+
 
              
   
@@ -270,30 +270,6 @@ font-weight:bold;
 
     <script type="text/javascript">
 
-
-
-
-var request;
-var form = $("myForm");
-var data = {
-    'id': form.find('input[name="email"]').val(),
-    'debut': form.find('input[name="debut"]').val(),
-    'type': form.find('input[name="type"]').val(),
-    'jour': form.find('input[name="jour"]').val(),
-    'username': form.find('input[name="username"]').val(),
-    'Cid': form.find('input[name="Cid"]').val(),
-};
-var headers = {
-    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-}
-request = $.ajax({
-    url: "/confirmationMessage",
-    type: "post",
-    headers: headers,
-    data: data
-});
-request.done(function (){
-});
 
 
 function getvalue() {
@@ -309,13 +285,17 @@ function getvalue() {
         function sendMessage() {
             document.getElementById("myForm").submit();
 
-        
-            // MessengerExtensions.requestCloseBrowser(function success() {
+            var delayInMilliseconds = 5000; //1 second
 
-            // }, function error(err) {
+setTimeout(function() {
+   MessengerExtensions.requestCloseBrowser(function success() {
 
-            // });
-        }
+             }, function error(err) {
+
+             });
+        } //your code to be executed after 1 second
+},
+          
 
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
