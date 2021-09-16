@@ -51,7 +51,7 @@ class TypeController extends Controller
          $image_name = $request->file('photo')->getRealPath();
          Cloudder::upload($image_name, null);
          list($width, $height) = getimagesize($image_name);
-         $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+         $image_url= Cloudder::secureShow(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
        
 
         $types = new Type();
@@ -117,7 +117,7 @@ class TypeController extends Controller
   
             list($width, $height) = getimagesize($image_name);
      
-            $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+            $image_url= Cloudder::secureShow(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
            
          
           $type->photo= $image_url;
