@@ -138,7 +138,6 @@ font-weight:bold;
 
     
 
-<div>
 
             <div class="container">
 
@@ -172,8 +171,8 @@ font-weight:bold;
                      
                 @endswitch
                 
-            <div id="top-menu"  class="bg-dark " style="opacity: 0.8">
-            @foreach ($items as $item)
+                <div  class=" bg-dark   text-center p-2 m-2  rounded" >
+                @foreach ($items as $item)
             @php   
             date_default_timezone_set("Africa/Algiers");
             $item2=date("H:i", strtotime(date($item)));
@@ -183,14 +182,14 @@ font-weight:bold;
                 
            
             @if ($item<$time_now)
-            <a href="#" class =" ml-2  text-center btn btn-warning disabled  bg-danger text-white border border-danger"  >
+            <a href="#" class ="m-1 text-center btn btn-warning disabled  bg-danger text-white border border-danger"  >
             {{$item2}}
             </a>
             @else
-            <input class="btn btn-success ml-2 " name="{{$item}}" onclick="getvalue()"  type="button" value="{{$item2}}">
+            <input class="btn btn-success m-1 " name="{{$item}}" onclick="getvalue()"  type="button" value="{{$item2}}">
             @endif
             @else
-            <input class="btn btn-success ml-2 " name="{{$item}}"  onclick="getvalue()" type="button" value="{{$item2}}">
+            <input class="btn btn-success m-1 " name="{{$item}}"  onclick="getvalue()" type="button" value="{{$item2}}">
 
 
              @endif
@@ -201,38 +200,15 @@ font-weight:bold;
             </div>
             <div class="row">
                 <div class=" col col-12 ">
-                        <input type="button" class="btn btn-success mt-2" id="clc" onclick="sendMessage()" style="display: none; width:100%" value="  تأكــــيد الموعـــد ">
+                        <input type="button" class="btn btn-success mt-2" id="clc" onclick="sendMessage()" style="display: none; width:100%" 
+                        value="  تأكــــيد الموعـــد ">
                 </div>
                 </div>
             </div>
 
-
-        
+    
        
-{{-- @foreach ($arr as $item)  
-              
-        
-          @php
-          date_default_timezone_set("Africa/Algiers");
 
-          $time_now = date("Y-m-d H:i:s");
-          $today=$item;
-          $debut=$appointment->jour.' '.$appointment->debut.":00";
-          $fin=$appointment->jour.' '.$appointment->fin.":00";
-  
-              $d=date("H:i", strtotime(date($today)));
-          @endphp
-
-          @if ("2020-09-19 11:00:00" <=$today and  $today<"2020-09-19 16:30:00" )
-         
-          <a href="#" class ="btn btn-warning disabled p-2 m-2 bg-danger text-white border border-danger"  >
-          {{$d}}</a>
-          @else
-          <a href="#" class ="btn btn-success  p-2 m-2 text-white "  >
-            {{$d}}</a>
-          @endif
-
-  @endforeach --}}
 
 
 
@@ -286,11 +262,11 @@ function getvalue() {
             document.getElementById("myForm").submit();
 
         
-            // MessengerExtensions.requestCloseBrowser(function success() {
+            MessengerExtensions.requestCloseBrowser(function success() {
 
-            //  }, function error(err) {
+             }, function error(err) {
 
-            //  });
+             });
         }
 
         (function (d, s, id) {
@@ -312,7 +288,7 @@ function getvalue() {
  */            });
         };
     </script>
-</div>
-@endif
+
+    @endif
 </body>
 </html>
