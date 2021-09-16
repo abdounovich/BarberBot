@@ -104,7 +104,6 @@ return view('parametres.index');
          list($width, $height) = getimagesize($image_name);
          $image_url= Cloudder::secureShow(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
          $bg_image=$image_url;
-         return;
             }
 else{            $bg_image=$request->get('image');
 }
