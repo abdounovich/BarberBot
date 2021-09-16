@@ -183,14 +183,14 @@ font-weight:bold;
                 
            
             @if ($item<$time_now)
-            <a href="#" class =" m-2  text-center btn btn-warning disabled  bg-danger text-white border border-danger"  >
+            <a href="#" class =" ml-2  text-center btn btn-warning disabled  bg-danger text-white border border-danger"  >
             {{$item2}}
             </a>
             @else
-            <input class="btn btn-success m-2 " name="{{$item}}" onclick="getvalue()"  type="button" value="{{$item2}}">
+            <input class="btn btn-success ml-2 " name="{{$item}}" onclick="getvalue()"  type="button" value="{{$item2}}">
             @endif
             @else
-            <input class="btn btn-success m-2 " name="{{$item}}"  onclick="getvalue()" type="button" value="{{$item2}}">
+            <input class="btn btn-success ml-2 " name="{{$item}}"  onclick="getvalue()" type="button" value="{{$item2}}">
 
 
              @endif
