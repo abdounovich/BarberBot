@@ -23,7 +23,7 @@
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
      
 @php
-$image=Setting::get('theme.bg-image');
+$image="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg";
 echo $image;
 @endphp
 <style>
