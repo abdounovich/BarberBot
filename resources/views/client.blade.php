@@ -31,7 +31,10 @@ body{
     
   
     background:url("{{Setting::get('theme.bg-image')}}") ;
-
+    background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+font-family: 'Cairo', sans-serif;
 }
   .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
