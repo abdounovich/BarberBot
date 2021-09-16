@@ -343,7 +343,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
 
   
 
-  $client=Client::where("fb_id",$Cid)->first();
+  $client=Client::find($Cid);
   $config=Config::get('app.url');
   
 
