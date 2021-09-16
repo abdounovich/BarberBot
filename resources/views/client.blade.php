@@ -30,7 +30,7 @@ $image=Setting::get('theme.bg-image');
 body{
     
   
-    background:url({{Setting::get('theme.premier')}}) ;
+    background:url({{Setting::get('theme.bg-image')}}) ;
 
 }
   .card {
