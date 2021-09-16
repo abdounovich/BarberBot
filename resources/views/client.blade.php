@@ -30,11 +30,7 @@ $image=Setting::get('theme.bg-image');
 body{
     
   
-    background:url(https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg) ;
-font-family: 'Cairo', sans-serif;
-background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background:url({{Setting::get('theme.premier')}}) ;
 
 }
   .card {
