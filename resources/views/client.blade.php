@@ -23,14 +23,14 @@
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
      
 @php
-$image="http://res.cloudinary.com/ds9qfm1ok/image/upload/c_fit,h_1024,w_1024/oenlxmpvqkc89j0wqrz8.png";
+$image={{Setting::get('theme.bg-image')}};
 @endphp
 <style>
 
 body{
     
   
-    background:url("http://res.cloudinary.com/ds9qfm1ok/image/upload/c_fit,h_1024,w_1024/oenlxmpvqkc89j0wqrz8.png") ;
+    background:url("{{image}}") ;
     background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
