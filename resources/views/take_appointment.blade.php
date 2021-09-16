@@ -172,7 +172,7 @@ font-weight:bold;
                      
                 @endswitch
                 
-            <div id="top-menu"  class=" bg-dark m-2 p-2 align-self-center justify-content-center align-items-center " style="opacity: 0.8">
+            <div id="top-menu"  class="bg-dark " style="opacity: 0.8">
             @foreach ($items as $item)
             @php   
             date_default_timezone_set("Africa/Algiers");
@@ -183,14 +183,14 @@ font-weight:bold;
                 
            
             @if ($item<$time_now)
-            <a href="#" class ="btn btn-warning disabled p-2 m-1 bg-danger text-white border border-danger"  >
+            <a href="#" class =" m-2  text-center btn btn-warning disabled  bg-danger text-white border border-danger"  >
             {{$item2}}
             </a>
             @else
-            <input class="btn btn-success  p-2 m-1" name="{{$item}}" onclick="getvalue()"  type="button" value="{{$item2}}">
+            <input class="btn btn-success m-2 " name="{{$item}}" onclick="getvalue()"  type="button" value="{{$item2}}">
             @endif
             @else
-            <input class="btn btn-success  p-2 m-1" name="{{$item}}"  onclick="getvalue()" type="button" value="{{$item2}}">
+            <input class="btn btn-success m-2 " name="{{$item}}"  onclick="getvalue()" type="button" value="{{$item2}}">
 
 
              @endif
@@ -201,7 +201,7 @@ font-weight:bold;
             </div>
             <div class="row">
                 <div class=" col col-12 ">
-                        <input type="button" class="btn btn-success" id="clc" onclick="sendMessage()" style="display: none; width:100%" value="  تأكــــيد الموعـــد ">
+                        <input type="button" class="btn btn-success mt-2" id="clc" onclick="sendMessage()" style="display: none; width:100%" value="  تأكــــيد الموعـــد ">
                 </div>
                 </div>
             </div>
