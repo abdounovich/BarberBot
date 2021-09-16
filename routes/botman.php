@@ -183,8 +183,6 @@ $full_name=$firstname.'-'.$lastname;
     
     if ($OneApp>0) {
         $bot->typesAndWaits(2);
-    $bot->reply("here");
-    return;
         $bot->reply(ButtonTemplate::create(' عذرا صديقي 😕 '.$full_name ."\n"." لقد حجزت موعد من قبل لا يمكنك حجز أكثر من موعد في نفس اليوم ")
         ->addButton(ElementButton::create('🗒 تصفح مواعيدي  ')
         ->url($this->config.'/client/'.$DbUsername->slug)
@@ -194,7 +192,7 @@ $full_name=$firstname.'-'.$lastname;
     
        )
         
-        ); return;}
+        ) ;return;}
 
 
 
