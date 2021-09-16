@@ -102,8 +102,9 @@ return view('parametres.index');
          $image_name = $request->file('bg-image')->getRealPath();
          Cloudder::upload($image_name, null);
          list($width, $height) = getimagesize($image_name);
-         $image_url= Cloudder::show(Cloudder::getPublicId(), );
+         $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
          $bg_image=$image_url;
+         return;
             }
 else{            $bg_image=$request->get('image');
 }
