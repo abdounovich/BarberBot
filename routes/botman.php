@@ -191,9 +191,9 @@ $full_name=$firstname.'-'.$lastname;
         ->heightRatio('tall')
         ->disableShare()
     
-        )
+       )
         
-        );}
+        ); return;}
 
 
 
