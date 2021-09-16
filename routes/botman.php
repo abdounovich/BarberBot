@@ -241,7 +241,7 @@ date_default_timezone_set("Africa/Algiers");
     }
 
     if ($today_statue==0 and $tomorrow_statue==0 and $aftertomorrow_statue==0) {
-   
+        $arr[]='';
        $bot->reply("المحل في عطلة , شكرا على التفهم ");
        return;
     }
