@@ -30,7 +30,7 @@ $image=Setting::get('theme.bg-image');
 body{
     
   
-    background:url({{$image}}) ;
+    background:url($image) ;
     background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
