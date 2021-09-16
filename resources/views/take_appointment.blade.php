@@ -171,7 +171,7 @@ font-weight:bold;
                      
                 @endswitch
                 
-                <div  class=" bg-dark   text-center p-2 m-2  rounded" >
+                <div  class=" bg-dark   text-center  m-2  rounded" >
                 @foreach ($items as $item)
             @php   
             date_default_timezone_set("Africa/Algiers");
