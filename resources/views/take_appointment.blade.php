@@ -116,9 +116,9 @@ font-weight:bold;
 
 
     <script type="text/javascript">
+window.onload = function() {
 
-    
-(function (d, s, id) {
+    (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) { return; }
             js = d.createElement(s); js.id = id;
@@ -131,10 +131,14 @@ font-weight:bold;
             MessengerExtensions.getUserID(function success(uids) {
                 var psid = uids.psid;//This is your page scoped sender_id
                 document.getElementById("id").value =psid;
+                alert(id);
             }, function error(err) {
                 alert("Messenger Extension Error: " + err);
             });
         };
+};
+    
+
     </script>
 
 
