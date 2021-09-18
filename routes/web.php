@@ -23,6 +23,13 @@ use App\Appointment;
 
 Route::get('/addPoints','AppointmentController@addPoints');
 
+
+Route::get('/test',function(){
+echo "ok";
+
+
+});
+
 Auth::routes();
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 

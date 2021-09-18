@@ -120,7 +120,10 @@ font-weight:bold;
 
 
 
+<form action="/test" method="get">
 
+    <input type="submit" value="okeeey">
+</form>
 
     <form method="post" action="/types" role="form" enctype="multipart/form-data">
         @csrf
