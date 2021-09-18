@@ -115,6 +115,71 @@ font-weight:bold;
 <body dir="ltr">
 
 
+
+
+
+
+
+
+
+    <form method="post" action="/types" role="form" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group">    
+            <label for="type" class=" float-right">  الخدمة  :</label>
+            <input type="text" class="form-control" name="type"/>
+        </div>
+
+        <div class="form-group">
+            <label for="prix" class=" float-right">السعر: </label>
+            <input type="text" class="form-control" name="prix"/>
+        </div>
+
+        <div class="form-group">
+            <label for="temps" class=" float-right">الوقت:</label>
+            <input type="text" class="form-control" name="temps"/>
+        </div>
+        <div class="form-group">
+            <label for="point" class=" float-right">الرصيد :</label>
+            <input type="text" class="form-control" name="point"/>
+        </div>
+
+        <div class="form-group">
+          <label for="photo" class=" float-right">الصورة :</label>
+<div class="row">
+<div class="col-2">
+<input type="file" id="imgupload" onchange="loadFile(event)"  name="photo" hidden>
+<a href="#" onclick="$('#imgupload').trigger('click'); return false;"> 
+<img class="img " id="image" 
+src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-131964752828011266_ko0lhf.png"
+alt="" width="200" height="200">
+</a>
+</div>
+
+</div>
+          
+                   
+      </div>
+      <script>
+          var loadFile = function(event) {
+              var image = document.getElementById('image');
+              image.src = URL.createObjectURL(event.target.files[0]);
+          };
+          </script>   
+          
+          
+  <div class="row">
+     
+      <div class="col col-12">
+         <button style="width: 100%" type="submit" class="btn btn-success">  اضافة</button>
+
+      </div>
+    
+  </div>    
+    
+      </form>
+
+
+
 @php
   $OneApp=App\Appointment::where('facebook',$username)
     ->where('ActiveType','1')->count();
