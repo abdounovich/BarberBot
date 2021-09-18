@@ -18,12 +18,7 @@ class AppointmentController extends Controller
 
 
 
-  public function c( )
-  {
 
-  echo "kk";
-  
-  }
 
 
     public function AnnulerByAdmin( $id)

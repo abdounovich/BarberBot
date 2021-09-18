@@ -214,7 +214,7 @@ font-weight:bold;
             </div>
             <div class="row">
                 <div class=" col col-12 ">
-                        <input type="button" class="btn btn-success mt-1" id="clc" onclick="sendMessage()" style="display: none; width:100%" 
+                        <input type="button" class="btn btn-success mt-1" id="clc" onclick="sendMessage() "  style="display: none; width:100%" 
                         value="  تأكــــيد الموعـــد ">
                 </div>
                 </div>
@@ -223,7 +223,25 @@ font-weight:bold;
     
        
 
+<script>
+$('#aclc').click(function(){
+    
+    var debut = $('#debut').val();
+    var id = $('#id').val();
+    var username = $('#username').val();
+    var Cid = $('#Cid').val();
+    var type = $('#type').val();
+    var jour = $('#jour').val();
 
+    var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
+
+alert(link);
+return
+   $('#myForm').attr('action', link);
+   $('#myForm').submit();
+});
+
+</script>
 
 
    
@@ -242,14 +260,18 @@ font-weight:bold;
 @endphp
 
 
-<form id="myForm"  action="/confirmationMessage/{{$id}}/{{$debut}}/{{$type->id}}/{{$jour}}/{{$username}}/{{$Cid}}" method="get">
+<form id="myForm"  action="/lol" method="get">
     @csrf
 
 
 
 
-<input type="hidden" name="id" id="id">
+<input type="hidden" name="id" id="id" >
 <input type="hidden" name="debut" id="debut">
+<input type="hidden" name="type" id="type" value="{{$type->id}}">
+<input type="hidden" name="jour" id="jour" value="{{$jour}}">
+<input type="hidden" name="username" id="username" value="{{$username}}">
+<input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
 
 
              
@@ -272,17 +294,25 @@ function getvalue() {
 
 }
         function sendMessage() {
-            document.getElementById("myForm").submit();
+       
+            window.extAsyncInit = function () {
+            // the Messenger Extensions JS SDK is done loading
+            MessengerExtensions.getUserID(function success(uids) {
+                var psid = uids.psid;//This is your page scoped sender_id
+                document.getElementById("id").value =psid;
+            }, function error(err) {
+/*                 alert("Messenger Extension Error: " + err);
+ */            });
+        };
 
-        /* 
-            MessengerExtensions.requestCloseBrowser(function success() {
+            // MessengerExtensions.requestCloseBrowser(function success() {
 
-             }, function error(err) {
+            //  }, function error(err) {
 
-             }); */
-        }
+            //  }); 
 
-        (function (d, s, id) {
+
+             (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) { return; }
             js = d.createElement(s); js.id = id;
@@ -290,16 +320,18 @@ function getvalue() {
             fjs.parentNode.insertBefore(js, fjs);
         }(document, "script", "Messenger"));
 
-        window.extAsyncInit = function () {
-            // the Messenger Extensions JS SDK is done loading
-            MessengerExtensions.getUserID(function success(uids) {
-                var psid = uids.psid;//This is your page scoped sender_id
-                document.getElementById("id").value =psid;
+       
+        var jour=document.getElementById('jour').value;
+            var debut=document.getElementById('debut').value;
+            var username=document.getElementById('username').value;
+            var type=document.getElementById('type').value;
+            var Cid=document.getElementById('Cid').value;
+            var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
+            document.getElementById('myForm').action = link;
+            document.getElementById("myForm").submit();
+        }
 
-            }, function error(err) {
-/*                 alert("Messenger Extension Error: " + err);
- */            });
-        };
+     
     </script>
 
     @endif
