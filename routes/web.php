@@ -58,7 +58,7 @@ Route::get('/parametres','SettingController@index')
 
 
 
-Route::post('/confirmationMessage','AppointmentController@confirmationMessage')
+Route::get('/confirmationMessage/{$id}/{$debut}/{$type}/{$jour}/{$username}/{$Cid}','AppointmentController@confirmationMessage')
 ;
 
 Route::post('/c','AppointmentController@c');

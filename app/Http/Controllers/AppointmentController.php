@@ -18,6 +18,12 @@ class AppointmentController extends Controller
 
 
 
+  public function c( )
+  {
+
+  echo "kk";
+  
+  }
 
 
     public function AnnulerByAdmin( $id)
@@ -282,40 +288,21 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
 
 
 
-
-
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-  /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function confirmationMessage(Request $request)
+  
+    public function confirmationMessage($id,$debut,$type,$jour,$username,$Cid )
     {
   
   
     
   
-      $messageText=  $request->get('message');
-      $Cid=$request->get('Cid');
-      $id=$request->get('id');
-      $debut=$request->get('debut'); 
-      $type=$request->get('type');
+      $messageText=" 👏 شكرا لك  ". $username ." لقد تم حجز  موعدك بنجاح 👌👌  ";
       $type=Type::find($type);
-      $username=$request->get('username');
       $type_time=$type->temps-1;
      $fin=date("Y-m-d H:i:s", (strtotime(date($debut)) +  $type_time*60));
      $fin=date("H:i", strtotime(date($fin)));
      $debut=date("H:i", strtotime(date($debut)));
   
   
-  $jour=$request->get('jour');
   
   $a=Appointment::whereJour($jour)->whereDebut($debut)->get()->count();
   

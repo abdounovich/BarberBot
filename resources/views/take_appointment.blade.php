@@ -120,66 +120,12 @@ font-weight:bold;
 
 
 
-<form action="/test" method="get">
-
+<form action="/c" method="post">
+@csrf
     <input type="submit" value="okeeey">
 </form>
 
-    <form method="post" action="/types" role="form" enctype="multipart/form-data">
-        @csrf
-        <div class="form-group">    
-            <label for="type" class=" float-right">  الخدمة  :</label>
-            <input type="text" class="form-control" name="type"/>
-        </div>
-
-        <div class="form-group">
-            <label for="prix" class=" float-right">السعر: </label>
-            <input type="text" class="form-control" name="prix"/>
-        </div>
-
-        <div class="form-group">
-            <label for="temps" class=" float-right">الوقت:</label>
-            <input type="text" class="form-control" name="temps"/>
-        </div>
-        <div class="form-group">
-            <label for="point" class=" float-right">الرصيد :</label>
-            <input type="text" class="form-control" name="point"/>
-        </div>
-
-        <div class="form-group">
-          <label for="photo" class=" float-right">الصورة :</label>
-<div class="row">
-<div class="col-2">
-<input type="file" id="imgupload" onchange="loadFile(event)"  name="photo" hidden>
-<a href="#" onclick="$('#imgupload').trigger('click'); return false;"> 
-<img class="img " id="image" 
-src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-131964752828011266_ko0lhf.png"
-alt="" width="200" height="200">
-</a>
-</div>
-
-</div>
-          
-                   
-      </div>
-      <script>
-          var loadFile = function(event) {
-              var image = document.getElementById('image');
-              image.src = URL.createObjectURL(event.target.files[0]);
-          };
-          </script>   
-          
-          
-  <div class="row">
-     
-      <div class="col col-12">
-         <button style="width: 100%" type="submit" class="btn btn-success">  اضافة</button>
-
-      </div>
     
-  </div>    
-    
-      </form>
 
 
 
@@ -290,23 +236,21 @@ alt="" width="200" height="200">
 
 
     
-<form id="myForm"  action="{{url('/confirmationMessage')}}" method="post">
+@php
+    $id="";
+    $debut="";
+@endphp
+
+
+<form id="myForm"  action="/confirmationMessage/{{$id}}/{{$debut}}/{{$type->id}}/{{$jour}}/{{$username}}/{{$Cid}}" method="get">
     @csrf
 
 
 
 
-    
-<input type="hidden" name="message" value=" 👏 شكرا لك  {{$username}} لقد تم حجز  موعدك بنجاح 👌👌  "> 
-   <input type="hidden" id="id" name="id"><br>
-   <input type="hidden" name="debut"  id="debut" >
-   <input type="hidden" name="type" id="type" value="{{$type->id}}">
-   <input type="hidden" name="jour" id="jour" value="{{$jour}}">
-   <input type="hidden" name="username" id="username" value="{{$username}}">
-   <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
+<input type="hidden" name="id" id="id">
+<input type="hidden" name="debut" id="debut">
 
-
-<input type="submit" value="ok">
 
              
   
@@ -318,6 +262,7 @@ alt="" width="200" height="200">
 
 function getvalue() {
                 var debut =document.getElementById("debut");
+                
 
 
                 debut.value =event.target.name;
