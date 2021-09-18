@@ -116,28 +116,43 @@ font-weight:bold;
 
 
     <script type="text/javascript">
-window.onload = function() {
 
-    (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, "script", "Messenger"));
-
-        window.extAsyncInit = function () {
-            // the Messenger Extensions JS SDK is done loading
-            MessengerExtensions.getUserID(function success(uids) {
-                var psid = uids.psid;//This is your page scoped sender_id
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.com/en_US/messenger.Extensions.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+    window.extAsyncInit = function() {
+      alert('loaded sdk'); 
+      MessengerExtensions.getUserID(function success(uids) {
+        var psid = uids.psid;
                 document.getElementById("id").value =psid;
-                alert(id);
-            }, function error(err) {
-                alert("Messenger Extension Error: " + err);
-            });
-        };
-};
+        alert(psid);
+      }, function error(err, errorMessage) {
+        alert(errorMessage);
+      });
+    };
+     
     
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
 
     </script>
 
