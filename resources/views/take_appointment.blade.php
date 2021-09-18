@@ -115,15 +115,31 @@ font-weight:bold;
 <body dir="ltr">
 
 
+    <script type="text/javascript">
+
+    
+(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, "script", "Messenger"));
+
+        window.extAsyncInit = function () {
+            // the Messenger Extensions JS SDK is done loading
+            MessengerExtensions.getUserID(function success(uids) {
+                var psid = uids.psid;//This is your page scoped sender_id
+                document.getElementById("id").value =psid;
+            }, function error(err) {
+                alert("Messenger Extension Error: " + err);
+            });
+        };
+    </script>
 
 
 
 
-
-<form action="/c" method="post">
-@csrf
-    <input type="submit" value="okeeey">
-</form>
 
     
 
@@ -227,7 +243,6 @@ font-weight:bold;
 $('#aclc').click(function(){
     
     var debut = $('#debut').val();
-    var id = $('#id').val();
     var username = $('#username').val();
     var Cid = $('#Cid').val();
     var type = $('#type').val();
@@ -235,8 +250,6 @@ $('#aclc').click(function(){
 
     var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
 
-alert(link);
-return
    $('#myForm').attr('action', link);
    $('#myForm').submit();
 });
@@ -294,34 +307,7 @@ function getvalue() {
 
 }
         function sendMessage() {
-       
-            window.extAsyncInit = function () {
-            // the Messenger Extensions JS SDK is done loading
-            MessengerExtensions.getUserID(function success(uids) {
-                var psid = uids.psid;//This is your page scoped sender_id
-                document.getElementById("id").value =psid;
-            }, function error(err) {
-/*                 alert("Messenger Extension Error: " + err);
- */            });
-        };
-
-            // MessengerExtensions.requestCloseBrowser(function success() {
-
-            //  }, function error(err) {
-
-            //  }); 
-
-
-             (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, "script", "Messenger"));
-
-       
-        var jour=document.getElementById('jour').value;
+            var jour=document.getElementById('jour').value;
             var debut=document.getElementById('debut').value;
             var username=document.getElementById('username').value;
             var type=document.getElementById('type').value;
@@ -329,6 +315,14 @@ function getvalue() {
             var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
             document.getElementById('myForm').action = link;
             document.getElementById("myForm").submit();
+
+            MessengerExtensions.requestCloseBrowser(function success() {
+
+             }, function error(err) {
+
+             }); 
+
+
         }
 
      
