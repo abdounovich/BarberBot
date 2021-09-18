@@ -238,7 +238,7 @@ font-weight:bold;
    <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
 
 
-
+<input type="submit" value="ok">
 
              
   
