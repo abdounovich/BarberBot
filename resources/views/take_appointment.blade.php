@@ -286,6 +286,12 @@ $('#clc').click(function(){
     var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
    $('#myForm').attr('action', link);
    $('#myForm').submit();
+
+   MessengerExtensions.requestCloseBrowser(function success() {
+
+}, function error(err) {
+
+}); 
 });
 
 </script>
