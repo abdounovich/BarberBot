@@ -285,7 +285,6 @@ $('#clc').click(function(){
 
     var link="/conf_message/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
    $('#myForm').attr('action', link);
-   return;
    $('#myForm').submit();
 });
 
