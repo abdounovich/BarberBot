@@ -130,12 +130,21 @@ font-weight:bold;
     window.extAsyncInit = function() {
       alert('loaded sdk'); 
       MessengerExtensions.getContext(function success(uids) {
-        var psid = uids.psid;
-                document.getElementById("id").value =psid;
+        function success(result){
+    alert(result.psid);
+    console.log("success", result);
+    document.getElementById("id").value =psid;
         alert(psid);
-      }, function error(err, errorMessage) {
-        alert(errorMessage);
-      });
+  },
+  function error(result){
+    console.log("error", result);
+  }
+
+
+
+
+          
+    
     };
      
     
