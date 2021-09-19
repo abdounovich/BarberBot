@@ -131,7 +131,6 @@ font-weight:bold;
         MessengerExtensions.getUserID(function success(user_ids) {
   // User ID was successfully obtained. 
   let psid = user_ids.psid;
-    document.getElementById("id").value =psid;
 alert(psid);
 }, function error(err, errorMessage) {      
   // Error handling code
