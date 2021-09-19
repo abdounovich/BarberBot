@@ -61,7 +61,13 @@ Route::get('/parametres','SettingController@index')
 Route::get('/confirmationMessage/{id}/{debut}/{type}/{jour}/{username}/{Cid}','AppointmentController@confirmationMessage')
 ;
 
+Route::get('/t',function(){
+    echo "ok";
+    echo  "<script type='text/javascript'>";
+    echo "window.open(location, '_self').close();";
+    echo "</script>";
 
+});
 
 Route::get('/reminder','AppointmentController@reminder')
 ;
