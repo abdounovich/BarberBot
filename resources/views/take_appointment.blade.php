@@ -333,16 +333,11 @@ function getvalue() {
             var type=document.getElementById('type').value;
             var Cid=document.getElementById('Cid').value;
             var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
-            alert(link);
-            return;
+        
             document.getElementById('myForm').action = link;
             document.getElementById("myForm").submit();
 
-            MessengerExtensions.requestCloseBrowser(function success() {
-
-             }, function error(err) {
-
-             }); 
+        
 
 
         }
