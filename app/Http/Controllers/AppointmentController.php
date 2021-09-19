@@ -288,9 +288,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
     {
   
   
-    
-  echo"ok";
-  return;
+
       $messageText=" 👏 شكرا لك  ". $username ." لقد تم حجز  موعدك بنجاح 👌👌  ";
       $type=Type::find($type);
       $type_time=$type->temps-1;
