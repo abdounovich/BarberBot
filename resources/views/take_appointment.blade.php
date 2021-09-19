@@ -128,13 +128,25 @@ font-weight:bold;
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
     window.extAsyncInit = function() {
-        MessengerExtensions.getUserID(function success(user_ids) {
+
+        let app_id=document.getElementById('app_id').value;
+
+
+        MessengerExtensions.getContext(app_id, 
+        function success(user_ids) {
   // User ID was successfully obtained. 
   let psid = user_ids.psid;
-alert(psid);
+document.getElementById('id').value=psid;
+
+alert(id);
 }, function error(err, errorMessage) {      
   // Error handling code
 });
+
+
+
+      
+           
 
 
 
@@ -308,7 +320,7 @@ alert(link);
 <input type="hidden" name="jour" id="jour" value="{{$jour}}">
 <input type="hidden" name="username" id="username" value="{{$username}}">
 <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
-
+<input type="text" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
 
              
   
