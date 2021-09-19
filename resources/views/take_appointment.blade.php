@@ -284,7 +284,7 @@ $('#clc').click(function(){
     var jour = $('#jour').val();
     var id = $('#id').val();
 
-    var link="/confirmationMessage/"+id+"/"+"12:00"+"/"+type+"/"+jour+"/"+username+"/"+Cid;
+    var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
    $('#myForm').attr('action', link);
    $('#myForm').submit();
 });
