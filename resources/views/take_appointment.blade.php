@@ -128,18 +128,14 @@ font-weight:bold;
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
     window.extAsyncInit = function() {
-      alert('loaded sdk'); 
-      MessengerExtensions.getContext(function success(uids) {
-        function success(result){
-    alert(result.psid);
-    console.log("success", result);
+        MessengerExtensions.getUserID(function success(user_ids) {
+  // User ID was successfully obtained. 
+  let psid = user_ids.psid;
     document.getElementById("id").value =psid;
-        alert(psid);
-  },
-  function error(result){
-    console.log("error", result);
-  }
-
+alert(psid);
+}, function error(err, errorMessage) {      
+  // Error handling code
+});
 
 
 
