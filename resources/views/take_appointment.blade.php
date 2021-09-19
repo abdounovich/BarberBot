@@ -325,22 +325,7 @@ function getvalue() {
  x.style.display = "block";
 
 }
-        function sendMe() {
-            var jour=document.getElementById('jour').value;
-            var debut=document.getElementById('debut').value;
-            var username=document.getElementById('username').value;
-            var id=document.getElementById('id').value;
-            var type=document.getElementById('type').value;
-            var Cid=document.getElementById('Cid').value;
-            var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
-        
-            document.getElementById('myForm').action = link;
-            document.getElementById("myForm").submit();
-            window.close();
-        
-
-
-        }
+       
 
      
     </script>
@@ -357,7 +342,6 @@ function getvalue() {
     
         var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
        $('#myForm').attr('action', link);
-       alert(link);
        $('#myForm').submit();
     
     
