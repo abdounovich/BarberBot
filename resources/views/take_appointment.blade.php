@@ -129,7 +129,7 @@ font-weight:bold;
     }(document, 'script', 'Messenger'));
     window.extAsyncInit = function() {
       alert('loaded sdk'); 
-      MessengerExtensions.getUserID(function success(uids) {
+      MessengerExtensions.getContext(function success(uids) {
         var psid = uids.psid;
                 document.getElementById("id").value =psid;
         alert(psid);
@@ -259,7 +259,7 @@ font-weight:bold;
        
 
 <script>
-$('#aclc').click(function(){
+$('#clc').click(function(){
     
     var debut = $('#debut').val();
     var username = $('#username').val();
@@ -268,7 +268,7 @@ $('#aclc').click(function(){
     var jour = $('#jour').val();
 
     var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
-
+alert(link);
    $('#myForm').attr('action', link);
    $('#myForm').submit();
 });
