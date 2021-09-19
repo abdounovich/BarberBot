@@ -265,7 +265,7 @@ alert(psid);
             </div>
             <div class="row">
                 <div class=" col col-12 ">
-                        <input type="button" class="btn btn-success mt-1" id="clc" onclick="sendMessage() "  style="display: none; width:100%" 
+                        <input type="button" class="btn btn-success mt-1" id="clc"   style="display: none; width:100%" 
                         value="  تأكــــيد الموعـــد ">
                 </div>
                 </div>
@@ -282,6 +282,7 @@ $('#clc').click(function(){
     var Cid = $('#Cid').val();
     var type = $('#type').val();
     var jour = $('#jour').val();
+    var id = $('#id').val();
 
     var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
 alert(link);
@@ -341,7 +342,7 @@ function getvalue() {
  x.style.display = "block";
 
 }
-        function sendMessage() {
+        function sendMe() {
             var jour=document.getElementById('jour').value;
             var debut=document.getElementById('debut').value;
             var username=document.getElementById('username').value;
