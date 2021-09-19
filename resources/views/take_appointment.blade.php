@@ -273,25 +273,7 @@ document.getElementById('id').value=psid;
     
        
 
-<script>
-$('#clc').click(function(){
-    
-    var debut = $('#debut').val();
-    var username = $('#username').val();
-    var Cid = $('#Cid').val();
-    var type = $('#type').val();
-    var jour = $('#jour').val();
-    var id = $('#id').val();
 
-    var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
-   $('#myForm').attr('action', link);
-   alert(link);
-   $('#myForm').submit();
-
-
-});
-
-</script>
 
 
    
@@ -366,6 +348,26 @@ function getvalue() {
         }
 
      
+    </script>
+
+<script>
+    $('#clc').click(function(){
+        
+        var debut = $('#debut').val();
+        var username = $('#username').val();
+        var Cid = $('#Cid').val();
+        var type = $('#type').val();
+        var jour = $('#jour').val();
+        var id = $('#id').val();
+    
+        var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
+       $('#myForm').attr('action', link);
+       alert(link);
+       $('#myForm').submit();
+    
+    
+    });
+    
     </script>
 
     @endif
