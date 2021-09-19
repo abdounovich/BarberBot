@@ -286,6 +286,7 @@ $('#clc').click(function(){
 
     var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
    $('#myForm').attr('action', link);
+   return;
    $('#myForm').submit();
 });
 
