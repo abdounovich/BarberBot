@@ -373,8 +373,10 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($messageData));
         curl_exec($ch);
         curl_close($ch);
-  echo '<a href="javascript:window.close">CLOSE</a>';
-      }  }
+        echo '<script language="javascript">';
+        echo 'alert("Successful!")';
+        echo '</script>';
+        echo "<script>window.close();</script>";      }  }
   
   
   
