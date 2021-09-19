@@ -138,7 +138,6 @@ font-weight:bold;
   let psid = user_ids.psid;
 document.getElementById('id').value=psid;
 
-alert(psid);
 }, function error(err, errorMessage) {      
   // Error handling code
 });
@@ -284,9 +283,8 @@ $('#clc').click(function(){
     var jour = $('#jour').val();
     var id = $('#id').val();
 
-    var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
+    var link="/confirmationMessage/"+id+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
    $('#myForm').attr('action', link);
-   return;
    $('#myForm').submit();
 });
 
