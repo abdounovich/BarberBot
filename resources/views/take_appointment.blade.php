@@ -345,6 +345,7 @@ function getvalue() {
             var jour=document.getElementById('jour').value;
             var debut=document.getElementById('debut').value;
             var username=document.getElementById('username').value;
+            var id=document.getElementById('id').value;
             var type=document.getElementById('type').value;
             var Cid=document.getElementById('Cid').value;
             var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid;
