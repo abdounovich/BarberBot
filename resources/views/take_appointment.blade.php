@@ -313,19 +313,19 @@ $('#clc').click(function(){
 @endphp
 
 
-<form id="myForm"  action="/lol" method="get">
+<form id="myForm"  action="/" method="get">
     @csrf
 
 
 
 
-<input type="text" name="id" id="id" >
+<input type="hidden" name="id" id="id" >
 <input type="hidden" name="debut" id="debut">
 <input type="hidden" name="type" id="type" value="{{$type->id}}">
 <input type="hidden" name="jour" id="jour" value="{{$jour}}">
 <input type="hidden" name="username" id="username" value="{{$username}}">
 <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
-<input type="text" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
+<input type="hidden" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
 
              
   
