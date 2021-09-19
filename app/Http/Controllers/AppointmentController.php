@@ -374,9 +374,9 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
         curl_exec($ch);
         curl_close($ch);
         echo '<script language="javascript">';
-        echo 'alert("Successful!")';
-        echo '</script>';
-        echo "<script>window.close();</script>";      }  }
+        echo 'alert("Successful!");
+        open(location, "_self").close();
+        </script>";   ';   }  }
   
   
   
