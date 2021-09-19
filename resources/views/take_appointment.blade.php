@@ -138,7 +138,7 @@ font-weight:bold;
   let psid = user_ids.psid;
 document.getElementById('id').value=psid;
 
-alert(id);
+alert(psid);
 }, function error(err, errorMessage) {      
   // Error handling code
 });
