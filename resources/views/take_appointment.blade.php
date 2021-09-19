@@ -336,7 +336,7 @@ function getvalue() {
         
             document.getElementById('myForm').action = link;
             document.getElementById("myForm").submit();
-
+            window.close();
         
 
 
