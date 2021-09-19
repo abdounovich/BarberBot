@@ -283,7 +283,7 @@ $('#clc').click(function(){
     var jour = $('#jour').val();
     var id = $('#id').val();
 
-    var link="/conf_message/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
+    var link="/conf_message/"+id+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
    $('#myForm').attr('action', link);
    $('#myForm').submit();
 });

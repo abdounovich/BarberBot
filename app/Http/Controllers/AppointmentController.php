@@ -284,7 +284,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
 
 
   
-    public function confirmationMessage($id,$debut,$type,$jour,$username,$Cid )
+    public function confirmationMessage($id,$type,$jour,$username,$Cid )
     {
   
   
