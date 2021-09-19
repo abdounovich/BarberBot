@@ -287,6 +287,7 @@ $('#clc').click(function(){
    $('#myForm').attr('action', link);
    $('#myForm').submit();
 
+
 });
 
 </script>
