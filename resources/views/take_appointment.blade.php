@@ -298,7 +298,7 @@ document.getElementById('id').value=psid;
 
 
 
-<input type="text" name="id" id="id" >
+<input type="hidden" name="id" id="id" >
 <input type="hidden" name="debut" id="debut">
 <input type="hidden" name="type" id="type" value="{{$type->id}}">
 <input type="hidden" name="jour" id="jour" value="{{$jour}}">
