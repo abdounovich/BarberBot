@@ -81,7 +81,9 @@ $config=Config::get('app.url');
                     "type"=>"web_url",
                     "url"=>"$config/client/$client->slug",
                     "title"=>" 🎁 رصيدي    ",
-                    "webview_height_ratio"=>"tall"
+                    "webview_height_ratio"=>"tall",
+                    "webview_share_button"=>"hide",
+                    "messenger_extensions"=>"true",
 
                   ],
                  
@@ -347,7 +349,9 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
                       "url"=>"$config/client/$client->slug",
                       "title"=>" 📅 تصفح  مواعيدي",
                       "webview_height_ratio"=>"tall",
-                      "messenger_extensions"=>"true"
+                      "messenger_extensions"=>"true",
+                      "webview_share_button"=>"hide"
+
   
   
                     ],
@@ -356,6 +360,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
                       "url"=>"$config/client/$client->slug",
                       "title"=>" 🎁 رصيدي    ",
                       "webview_height_ratio"=>"tall",
+                      "webview_share_button"=>"hide",
                       "messenger_extensions"=>"true"
                       
   
