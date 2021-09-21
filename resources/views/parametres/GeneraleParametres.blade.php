@@ -32,7 +32,7 @@
 <div class="col-2">
 <input type="file" id="imgupload" onchange="loadFile(event)"   name="bg-image" hidden>
 <a href="#" onclick="$('#imgupload').trigger('click'); return false;"> 
-<img class="img " id="image" 
+<img class="img " id="image" alt="" width="200" height="200"
 @if (Setting::get('theme.bg-image')=="")
 src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-131964752828011266_ko0lhf.png"
     
@@ -41,7 +41,7 @@ src="{{Setting::get('theme.bg-image')}}"
 @endIf
 
 
-alt="" width="200" height="200">
+>
 </a>
 <input value="{{Setting::get('theme.bg-image')}}" class="form-control" type="hidden" name="image">
 
