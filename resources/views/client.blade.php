@@ -261,9 +261,9 @@ background-color:{{Setting::get('theme.deuxieme')}};
          <div class="col">
            <form action="/annuler" id="myForm" method="post"> 
             @csrf           
-            <input type="text" name="id" id="" value="{{$client->fb_id}}">
-            <input type="text" name="facebook" id="" value="{{$client->facebook}}">
-            <a onclick="sendMessage()" class="btn btn-danger  text-white col-4"> نعم </a>
+            <input type="hidden" name="id" id="id" >
+            <input type="hidden" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
+                        <a onclick="sendMessage()" class="btn btn-danger  text-white col-4"> نعم </a>
 
             <a class="btn btn-secondary text-white col-4" data-dismiss="modal">  لا شكرا </a>
           </form> </div> 
