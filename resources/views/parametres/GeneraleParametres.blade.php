@@ -4,7 +4,7 @@
 <h3 class="text-center bg-premier p-4 rounded text-dark mt-4">  إعدادات عامة</h3>
 
 
-<div class="text-right bg-dark p-2" >
+<div class="text-right bg-dark p-2"  style="opacity: 0.9">
 
 
 
@@ -64,7 +64,7 @@ src="{{Setting::get('theme.bg-image')}}"
 
 
 
-    <button style="" type="submit" class="btn btn-success">  حفظ التعديلات </button>
+    <button   type="submit" class="btn btn-success">  حفظ التعديلات </button>
     <div class="form-group mt-4" style="opacity: 0" id="PB">
         <div class="progress">
             <div class="progress-bar  progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>

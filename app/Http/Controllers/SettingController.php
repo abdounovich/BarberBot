@@ -115,7 +115,10 @@ else{            $bg_image=$request->get('image');
             'bg-image' => $bg_image,
                 ]);
 
-                return response()->json(['success'=>'Successfully uploaded.']);
+
+
+               
+
 
                 return view("/parametres")->with("success"," لقد تم حفظ البيانات بنجاح");
 
