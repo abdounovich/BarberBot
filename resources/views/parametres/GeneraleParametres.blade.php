@@ -91,6 +91,9 @@ alt="" width="200" height="200">
                 complete: function (xhr) {
                     console.log('File has uploaded');
                      percentage = '0';
+                    $('.progress .progress-bar').css("width", percentage+'%', function() {
+                      return $(this).attr("aria-valuenow", percentage) + "%";
+                    })
 
                 }
             });
