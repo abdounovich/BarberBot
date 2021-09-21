@@ -20,16 +20,18 @@
  
     
   
-    <h3 class="p-2 text-white">قائمة الزبائن :  </h3>
+    <h3 class="p-2 text-white text-right">قائمة الزبائن :  </h3>
 
 
+    <table class="table  bg-deuxieme text-color " style="opacity:0.9 ">
+      <thead class=" bg-premier text-deuxieme text-right">
+        <tr class="text-dark">
 
-    <table class="table bordred text-color table-striped bg-deuxieme"style="opacity:0.9">
-        <tr class="text-dark bg-premier">
-
-          <td scope="col">الفيسبوك</td>
-          <td scope="col">الرصيد </td>
-          <td scope="col"> تاريخ التسجيل </td>
+          <th scope="col">الفيسبوك</th>
+          <th scope="col"> الحلاقة </th>
+          <th scope="col">الموعد  </th>
+          <th scope="col"></th>
+          <th scope="col"></th>
 
         </tr>
       <tbody class=" text-right">
@@ -59,7 +61,7 @@
 
         </tr>
     
-        @endforeach
+         @endforeach
       </tbody>
     </table>
 
