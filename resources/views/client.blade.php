@@ -210,7 +210,7 @@ document.getElementById('id').value=psid;
 
 
                 
-                <div   dir="rtl" class="p-2 m-2 h4"> موعدك يوم   {{$yawm}}  على   {{$appointment->debut}}   </div>
+                <div   dir="rtl" class="p-2 m-2 h4 text-color"> موعدك يوم   {{$yawm}}  على   {{$appointment->debut}}   </div>
               
 <div style="direction: ltr "  id="countdown-container"></div>
 {{-- @if ($difmin>32400)  --}}
