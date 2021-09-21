@@ -372,10 +372,10 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($messageData));
         curl_exec($ch);
-        curl_close($ch);
+        curl_close($ch);         return view('test');
+
          } ;
 
-         return view('test');
 
        
         }
