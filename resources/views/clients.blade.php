@@ -16,23 +16,22 @@
 
 
 
-  <div class="row my-5 p-3">
   
  
     
   
     <h3 class="p-2 text-white">قائمة الزبائن :  </h3>
+
+
+
     <table class="table bordred text-color table-striped bg-deuxieme"style="opacity:0.9">
-      <thead class=" bg-premier  text-right">
         <tr class="text-dark">
 
-          <th scope="col">الفيسبوك</th>
-          <th scope="col"></th>
-          <th scope="col">الرصيد </th>
-          <th scope="col"> تاريخ التسجيل </th>
+          <td scope="col">الفيسبوك</td>
+          <td scope="col">الرصيد </td>
+          <td scope="col"> تاريخ التسجيل </td>
 
         </tr>
-      </thead>
       <tbody class=" text-right">
      
         @foreach ($clients as $client)
@@ -51,8 +50,7 @@
    <form action="{{route("client.editpoints",$client->id)}}" method="post">
     @csrf
   <td><input type="text" class=" form-control " name="points" value="{{$client->points}}" id="">            
-  </td>
-  <td><button class="btn btn-premier " type="submit">تغيير</button>
+ <button class="btn btn-premier " type="submit">تغيير</button>
 </td>
           </span> 
     
@@ -64,16 +62,12 @@
         @endforeach
       </tbody>
     </table>
-  </div>
-</div>
-
 
 <div class=" container">
   <div class="row">
-  <div class=" justify-content-center">{{$clients->links()}}
- </div>
+  <div class=" justify-content-center">{{$clients->links()}}</div>
 </div> 
 
-
+</div>
 
 @stop
