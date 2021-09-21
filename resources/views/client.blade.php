@@ -286,7 +286,7 @@ document.getElementById('id').value=psid;
 // flat-colors-black, black, black-wide, black-very-wide, 
 // black-black, white, white-wide, 
 // white-very-wide or white-black
-    theme: "black-black",
+    theme: "flat-colors",
 
 // end time
     end: $.now() + str-3600,
