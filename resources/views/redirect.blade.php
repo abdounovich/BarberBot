@@ -117,7 +117,7 @@ background-color:{{Setting::get('theme.deuxieme')}};
     <!-- Styles -->
 </head>
 <body class="bg-dark text-dark">
-<div class="bg-dark text-white"> {{$message}}
+<div class=" p-2 m-2 h1 bg-dark text-white text-center"> {{$message}}
 </div>
 </body>
 </html>
