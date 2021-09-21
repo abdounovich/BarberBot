@@ -100,7 +100,7 @@ $config=Config::get('app.url');
       curl_exec($ch);
       curl_close($ch);
       $message="لقد تم إلغاء موعدك بنجاح ";
-      return view('test')->with("client",$client->slug)->with("message",$message);
+      return view('redirect')->with("client",$client->slug)->with("message",$message);
 
 
 
@@ -376,7 +376,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
         curl_exec($ch);
         curl_close($ch);        
         $message="لقد تم حجز موعدك بنجاح ";
-        return view('test')->with("client",$client->slug)->with("message",$message);
+        return view('redirect')->with("client",$client->slug)->with("message",$message);
          } ;
 
 

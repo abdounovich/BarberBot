@@ -24,8 +24,8 @@ use App\Appointment;
 Route::get('/addPoints','AppointmentController@addPoints');
 
 
-Route::get('/test',function(){
-return view('test');
+Route::get('/redirect',function(){
+return view('redirect');
 
 });
 
