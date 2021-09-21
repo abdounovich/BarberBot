@@ -11,6 +11,6 @@
 <body style=" background-color: black; color:black">
   
 
-  <div style="color: white">لقد تم حجز موعدك بنجاح </div>
+  <div style="color: white">{{$message}}</div>
 </body>
 </html>

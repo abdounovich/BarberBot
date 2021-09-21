@@ -99,7 +99,8 @@ $config=Config::get('app.url');
       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($messageData));
       curl_exec($ch);
       curl_close($ch);
-      return view('test')->with("client",$client->slug);
+      $message="لقد تم إلغاء موعدك بنجاح ";
+      return view('test')->with("client",$client->slug)->with("message",$message);
 
 
 
@@ -374,8 +375,8 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($messageData));
         curl_exec($ch);
         curl_close($ch);        
-         return view('test')->with("client",$client->slug);
-
+        $message="لقد تم حجز موعدك بنجاح ";
+        return view('test')->with("client",$client->slug)->with("message",$message);
          } ;
 
 
