@@ -201,7 +201,7 @@ document.getElementById('id').value=psid;
       </div>
 </div>
  @if ($difmin-3600 >'0')
-      <div  class="card  mt-4 bg-deuxieme text-color " style="opacity: 0.9">
+      <div  class="card  mt-4 bg-premier text-color " style="opacity: 0.9">
   
       
     
@@ -210,7 +210,7 @@ document.getElementById('id').value=psid;
 
 
                 
-                <div   dir="rtl" class="p-2 m-2 h4 text-color"> موعدك يوم   {{$yawm}}  على   {{$appointment->debut}}   </div>
+                <div   dir="rtl" class="p-2 m-2 h4 text-dark"> موعدك يوم   {{$yawm}}  على   {{$appointment->debut}}   </div>
               
 <div style="direction: ltr "  id="countdown-container"></div>
 {{-- @if ($difmin>32400)  --}}
@@ -286,7 +286,7 @@ document.getElementById('id').value=psid;
 // flat-colors-black, black, black-wide, black-very-wide, 
 // black-black, white, white-wide, 
 // white-very-wide or white-black
-    theme: "flat-colors",
+    theme: "black-black",
 
 // end time
     end: $.now() + str-3600,
