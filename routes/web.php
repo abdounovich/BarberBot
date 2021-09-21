@@ -72,7 +72,7 @@ Route::post('/types_edit/{id}','TypeController@update')
 ->middleware('auth');
 Route::get('/actif/{id}/{num}','AppointmentController@actif')
 ;
-Route::post('/annuler','AppointmentController@Annuler')
+Route::get('/annuler/{id}/{facebook}','AppointmentController@Annuler')
 ;
 Route::get('/annulerByAdmin/{id}','AppointmentController@AnnulerByAdmin')
 ;

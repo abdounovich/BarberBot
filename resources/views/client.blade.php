@@ -259,11 +259,14 @@ background-color:{{Setting::get('theme.deuxieme')}};
 هل تريد حقا إلغاء موعدك ؟         </div>
         <div class="modal-footer row float-right text-right">
          <div class="col">
-           <form action="/annuler" id="myForm" method="post"> 
+           <form action="/annuler" id="myForm" method="get"> 
             @csrf           
-            <input type="hidden" name="id" id="id" >
-            <input type="hidden" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
-                        <a onclick="sendMessage()" class="btn btn-danger  text-white col-4"> نعم </a>
+            <input type="text" name="id" id="id" >
+            <input type="text" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
+            <input type="text" name="facebook" id="facebook" value="{{$client->facebook}}">
+
+
+                        <a id="clc" class="btn btn-danger  text-white col-4"> نعم </a>
 
             <a class="btn btn-secondary text-white col-4" data-dismiss="modal">  لا شكرا </a>
           </form> </div> 
@@ -369,20 +372,24 @@ background-color:{{Setting::get('theme.deuxieme')}};
                    
     
     }
-            function sendMessage() {
-                document.getElementById("myForm").submit();
-    
             
-                MessengerExtensions.requestCloseBrowser(function success() {
-    
-                }, function error(err) {
-                    alert(err);
-    
-                });
-            
-    
-            
-            };
         </script>
+
+
+
+
+<script>
+    $('#clc').click(function(){
+        
+        var facebook = $('#facebook').val();
+
+        var id = $('#id').val();
+    
+        var link="/annuler/"+id+"/"+facebook;
+       $('#myForm').attr('action', link);
+       $('#myForm').submit();
+        });
+    
+    </script>
 </body>
 </html>
