@@ -93,7 +93,9 @@ alt="" width="200" height="200">
                      percentage = '0';
                     $('.progress .progress-bar').css("width", percentage+'%', function() {
                       return $(this).attr("aria-valuenow", percentage) + "%";
-                    })
+                    });
+                    location.reload();
+
 
                 }
             });
