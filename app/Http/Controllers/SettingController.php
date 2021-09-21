@@ -117,8 +117,7 @@ else{            $bg_image=$request->get('image');
 
 
 
-               
-
+             
 
                 return view("/parametres")->with("success"," لقد تم حفظ البيانات بنجاح");
 
