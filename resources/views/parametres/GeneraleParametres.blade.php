@@ -65,7 +65,7 @@ alt="" width="200" height="200">
 
 
     <button style="" type="submit" class="btn btn-success">  حفظ التعديلات </button>
-    <div class="form-group mt-4">
+    <div class="form-group mt-4" style="opacity: 0" id="PB">
         <div class="progress">
             <div class="progress-bar  progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
         </div>
@@ -81,8 +81,11 @@ alt="" width="200" height="200">
             $('#myForm').ajaxForm({
                 beforeSend: function () {
                     var percentage = '0';
+
                 },
                 uploadProgress: function (event, position, total, percentComplete) {
+                    $('#PB').css("opacity", "1");
+
                     var percentage = percentComplete;
                     $('.progress .progress-bar').css("width", percentage+'%', function() {
                       return $(this).attr("aria-valuenow", percentage) + "%";
@@ -96,6 +99,9 @@ alt="" width="200" height="200">
                     });
                     $('#myForm').submit();
                     location.reload();
+              $('#PB').css("opacity", "0");
+
+                    
 
 
                 }
