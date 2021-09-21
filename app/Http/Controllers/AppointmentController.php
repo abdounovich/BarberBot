@@ -92,7 +92,7 @@ $config=Config::get('app.url');
           ],
       ];
       $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token=' . env("FACEBOOK_TOKEN"));
-      // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_HEADER, false);
       curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
       curl_setopt($ch, CURLOPT_POST, true);
@@ -368,7 +368,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
             ],
         ];
         $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token=' . env("FACEBOOK_TOKEN"));
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         // curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
         curl_setopt($ch, CURLOPT_POST, true);
