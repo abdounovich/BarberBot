@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="refresh" content="3;url=/client/{{$client}}" />
 
-    <title>Barber Bot</title>
+    <title>{{ config('app.name', 'BarberBot') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
