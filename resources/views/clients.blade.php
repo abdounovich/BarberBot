@@ -25,7 +25,7 @@
 
 
     <table class="table bordred text-color table-striped bg-deuxieme"style="opacity:0.9">
-        <tr class="text-dark">
+        <tr class="text-dark bg-premier">
 
           <td scope="col">الفيسبوك</td>
           <td scope="col">الرصيد </td>
@@ -49,7 +49,7 @@
         
    <form action="{{route("client.editpoints",$client->id)}}" method="post">
     @csrf
-  <td><input type="text" class=" form-control " name="points" value="{{$client->points}}" id="">            
+  <td><input type="text" class=" form-control col col-4" name="points" value="{{$client->points}}" id="">            
  <button class="btn btn-premier " type="submit">تغيير</button>
 </td>
           </span> 
