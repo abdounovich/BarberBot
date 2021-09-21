@@ -9,7 +9,7 @@
 
 
 
- <form  method="post" action="edit-generale-parametre" enctype="multipart/form-data">
+ <form  method="post" id="myForm" action="edit-generale-parametre" enctype="multipart/form-data">
     @csrf
 <div class="m-4">        
     <label class="h4 text-white " for="premier">لون الزر الأساسي :</label>
@@ -65,9 +65,35 @@ alt="" width="200" height="200">
 
 
     <button style="" type="submit" class="btn btn-success">  حفظ التعديلات </button>
-
+    <div class="form-group">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        </div>
+    </div>
 </form>
            
+
+<script>
+    $(function () {
+        $(document).ready(function () {
+            $('#myForm').ajaxForm({
+                beforeSend: function () {
+                    var percentage = '0';
+                },
+                uploadProgress: function (event, position, total, percentComplete) {
+                    var percentage = percentComplete;
+                    $('.progress .progress-bar').css("width", percentage+'%', function() {
+                      return $(this).attr("aria-valuenow", percentage) + "%";
+                    })
+                },
+                complete: function (xhr) {
+                    console.log('File has uploaded');
+                }
+            });
+        });
+    });
+</script>
+
 </div>
  
 </div>
