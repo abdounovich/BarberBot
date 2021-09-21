@@ -115,7 +115,66 @@ background-color:{{Setting::get('theme.deuxieme')}};
 <!-- Optionally add this to use a skin : -->
     <!-- Styles -->
 </head>
+
+
+
 <body dir="rtl" >
+    <script type="text/javascript">
+
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {
+            return;
+          }
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://connect.facebook.com/en_US/messenger.Extensions.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'Messenger'));
+        window.extAsyncInit = function() {
+    
+            let app_id=document.getElementById('app_id').value;
+    
+    
+            MessengerExtensions.getContext(app_id, 
+            function success(user_ids) {
+      // User ID was successfully obtained. 
+      let psid = user_ids.psid;
+    document.getElementById('id').value=psid;
+    
+    }, function error(err, errorMessage) {      
+      // Error handling code
+    });
+    
+    
+    
+          
+               
+    
+    
+    
+              
+        
+        };
+         
+        
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    
+        </script>
+    
 <div class="m-4">
     <div  class=" card bg-premier text-color  justify-content-center align-self-center align-items-center" style="opacity: 0.9">
         @php
@@ -320,25 +379,9 @@ background-color:{{Setting::get('theme.deuxieme')}};
                     alert(err);
     
                 });
-            }
+            
     
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) { return; }
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, "script", "Messenger"));
-    
-            window.extAsyncInit = function () {
-                // the Messenger Extensions JS SDK is done loading
-                MessengerExtensions.getUserID(function success(uids) {
-                    var psid = uids.psid;//This is your page scoped sender_id
-                    document.getElementById("id").value =psid;
-    
-                }, function error(err) {
-    /*                 alert("Messenger Extension Error: " + err);
-     */            });
+            
             };
         </script>
 </body>
