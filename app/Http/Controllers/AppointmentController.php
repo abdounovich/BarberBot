@@ -99,6 +99,7 @@ $config=Config::get('app.url');
       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode("a"));
       curl_exec($ch);
       curl_close($ch);
+      return view('test')->with("client",$client->slug);
 
 
 
@@ -370,7 +371,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
         // curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($messageData));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode("l"));
         curl_exec($ch);
         curl_close($ch);        
          return view('test')->with("client",$client->slug);
