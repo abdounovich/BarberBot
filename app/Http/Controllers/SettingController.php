@@ -100,7 +100,7 @@ return view('parametres.index');
             if($request->hasFile('bg-image')){
 
          $image_name = $request->file('bg-image')->getRealPath();
-         Cloudder::upload($image_name, null);
+         Cloudder::upload($image_name, ["timeout" => 60]);
          list($width, $height) = getimagesize($image_name);
          $image_url= Cloudder::secureShow(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
          $bg_image=$image_url;
