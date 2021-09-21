@@ -25,8 +25,7 @@ Route::get('/addPoints','AppointmentController@addPoints');
 
 
 Route::get('/test',function(){
-echo "ok";
-
+return view('test');
 
 });
 
