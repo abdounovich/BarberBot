@@ -91,6 +91,7 @@ alt="" width="200" height="200">
                 complete: function (xhr) {
                     console.log('File has uploaded');
                     $('#myForm').submit();
+                    var percentage = '0';
 
                 }
             });
