@@ -8,7 +8,9 @@
 
   <title>Document</title>
 </head>
-<body>
-  slug="{{$client}}"
+<body class="bg-dark text-dark">
+  
+
+  <div class="text-white">لقد تم حجز موعدك بنجاح </div>
 </body>
 </html>
