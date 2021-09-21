@@ -94,6 +94,7 @@ alt="" width="200" height="200">
                     $('.progress .progress-bar').css("width", percentage+'%', function() {
                       return $(this).attr("aria-valuenow", percentage) + "%";
                     });
+                    $('#myForm').submit();
                     location.reload();
 
 
