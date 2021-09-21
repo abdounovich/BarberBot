@@ -215,7 +215,7 @@ document.getElementById('id').value=psid;
 <div style="direction: ltr "  id="countdown-container"></div>
 {{-- @if ($difmin>32400)  --}}
 <div>
- <a style="width: 60%" class="btn btn-danger m-2  " data-toggle="modal" data-target="#exampleModal">  إلغاء موعدي   </a>
+ <a style="width: 60%" class="btn btn-danger m-2  text-white " data-toggle="modal" data-target="#exampleModal">  إلغاء موعدي   </a>
 </div>
 
 
