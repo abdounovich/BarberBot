@@ -12,4 +12,10 @@ class Type extends Model
     {
         return $this->hasOneThrought(Appointment::class);
     }
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

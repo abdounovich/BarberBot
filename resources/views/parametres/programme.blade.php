@@ -4,11 +4,12 @@
 
 
 @php
-    $appointments=App\Appointment::where("ActiveType",5)->get();
+    use Illuminate\Support\Facades\Auth;
+    $user_id=Auth::user()->id;
+    $appointments=App\Appointment::where("ActiveType",5)->where("user_id",$user_id)->get();
+
+
 @endphp
-
-
-
 
 
 
@@ -38,16 +39,16 @@
 @csrf @for ($i = 0; $i < 7; $i++)
 <tr class="bg-secondary text-white text-center">
         <td>{{$arabic[$i]}}</td>
-        <td class="text-center"><input class="form-control  {{$anglais[$i]}} " @if (Setting::get($anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-debut'}}" value="{{Setting::get($anglais[$i].'.debut')}}"></td>
-        <td><input class="form-control  {{$anglais[$i]}} "@if (Setting::get($anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-fin'}}" value="{{Setting::get($anglais[$i].'.fin')}}"></td>
-        <td><input class="form-control  {{$anglais[$i]}}"@if (Setting::get($anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-debut-repos'}}" value="{{Setting::get($anglais[$i].'.debut-repos')}}"></td>
-        <td><input class="form-control  {{$anglais[$i]}} " @if (Setting::get($anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-fin-repos'}}" value="{{Setting::get($anglais[$i].'.fin-repos')}}"></td>
+        <td class="text-center"><input class="form-control  {{$anglais[$i]}} " @if (Setting::get("id_".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-debut'}}" value="{{Setting::get($anglais[$i].'.debut')}}"></td>
+        <td><input class="form-control  {{$anglais[$i]}} "@if (Setting::get("id_".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-fin'}}" value="{{Setting::get($anglais[$i].'.fin')}}"></td>
+        <td><input class="form-control  {{$anglais[$i]}}"@if (Setting::get("id_".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-debut-repos'}}" value="{{Setting::get($anglais[$i].'.debut-repos')}}"></td>
+        <td><input class="form-control  {{$anglais[$i]}} " @if (Setting::get("id_".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-fin-repos'}}" value="{{Setting::get($anglais[$i].'.fin-repos')}}"></td>
         <td><input  class=" " type="checkbox"    
-            @if (Setting::get($anglais[$i].'.active')=="1" ) checked  
+            @if (Setting::get("id_".$anglais[$i].'.active')=="1" ) checked  
             @endif 
             onchange="myFunction('{{$i}}')" id="cb{{$i}}" data-on="مفعل" 
             data-off="موقف" data-onstyle="outline-success" data-offstyle="outline-danger"  data-toggle="toggle"></td>
-  <input type="hidden" id="{{$i}}" name="{{$anglais[$i].'-active'}}" value="{{Setting::get($anglais[$i].'.active')}}">
+  <input type="hidden" id="{{$i}}" name="{{$anglais[$i].'-active'}}" value="{{Setting::get("id_".$anglais[$i].'.active')}}">
       </tr>
 @endfor
    <tr class="bg-dark"><td colspan="6"><div class=" text-right p-3 ">

@@ -1,8 +1,9 @@
 <?php
 use App\Type;
+use App\User;
 use App\Client;
-use Carbon\Carbon;
 
+use Carbon\Carbon;
 use App\Appointment;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Config;
@@ -58,7 +59,7 @@ $bot->typesAndWaits(2);
     $bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة التلقائية  🤖  كيف يمكنني خدمتك ؟  ')
 	->addButton(ElementButton::create(' 📆 احجز موعدك الآن')
 	    ->type('postback')
-	    ->payload('GotoDis')
+	    ->payload('UserChose')
 	)
 	->addButton(ElementButton::create(' 👨‍🏫  كيف أحجز موعد    ')
     ->type('postback')
@@ -164,9 +165,7 @@ $bot->reply(Question::create(' إظهار المزيد ➕ ؟   ')->addButtons([
 
 
 
-
-
-$botman->hears('GoToDis', function ( $bot) {
+$botman->hears('GoToDis([0-9]+)', function ( $bot,$user_id) {
 
     $user = $bot->getUser();
     $facebook_id = $user->getId();
@@ -176,6 +175,8 @@ $botman->hears('GoToDis', function ( $bot) {
 $lastname = $user->getLastname();
 $full_name=$firstname.'-'.$lastname;
 // Access Username
+
+$user=User::find($user_id);
 
     $DbUsername=Client::whereFacebook($full_name)->first();
     $OneApp=Appointment::where('facebook',$full_name)
@@ -210,9 +211,9 @@ date_default_timezone_set("Africa/Algiers");
   
      
 
-     $today_statue=Setting::get($today.".active"); 
-     $tomorrow_statue=Setting::get($tomorrow.".active"); 
-     $aftertomorrow_statue=Setting::get($aftertomorrow.".active"); 
+     $today_statue=Setting::get("id_".$user_id."/".$today.".active"); 
+     $tomorrow_statue=Setting::get("id_".$user_id."/".$tomorrow.".active"); 
+     $aftertomorrow_statue=Setting::get("id_".$user_id."/".$aftertomorrow.".active"); 
 
  
      if ($aftertomorrow_statue==1) {     
@@ -258,17 +259,67 @@ date_default_timezone_set("Africa/Algiers");
     
 });
 
-/* $botman->hears('C([0-9]+)', function ($bot, $number) {
+
+$botman->hears('UserChose', function ( $bot) {
+
     $user = $bot->getUser();
+    $facebook_id = $user->getId();
     // Access last name
-    $facebook_id=$user->getId();
     $firstname = $user->getFirstname();
 // Access last name
 $lastname = $user->getLastname();
 $full_name=$firstname.'-'.$lastname;
-$bot->startConversation(new ExampleConversation($full_name,$number,$facebook_id));
+// Access Username
 
-}); */
+$users=User::all();
+$usersArray=array();
+foreach($users as $user){
+    $usersArray[]= Element::create($user->username)
+    ->subtitle("السعر ")
+    ->image($type->photo)
+    ->addButton(ElementButton::create(' 📆 احجز عند '.$user->username)
+    ->payload('GoToDis'.$user->id)
+    ->type('postback'));
+}
+    $DbUsername=Client::whereFacebook($full_name)->first();
+    $OneApp=Appointment::where('facebook',$full_name)
+    ->where('ActiveType','1')->count();
+    
+    if ($OneApp>0) {
+        $bot->typesAndWaits(2);
+        $bot->reply(ButtonTemplate::create(' عذرا صديقي 😕 '.$full_name ."\n"." لقد حجزت موعد من قبل لا يمكنك حجز أكثر من موعد في نفس اليوم ")
+        ->addButton(ElementButton::create('🗒 تصفح مواعيدي  ')
+        ->url($this->config.'/client/'.$DbUsername->slug)
+        ->enableExtensions()
+        ->heightRatio('tall')
+        ->disableShare()
+    
+       )
+        
+        ) ;return;}
+
+
+
+        else{
+
+
+ 
+
+    
+ 
+    
+
+ 
+
+
+      }
+    $bot->typesAndWaits(2);
+
+
+     $bot->reply(ButtonTemplate::create('  من فضــلــك إختــر  الحــلاق  👇👇')->addButtons($usersArray)); 
+    
+});
+
 
 
 
@@ -339,7 +390,7 @@ $full_name=$firstname.'-'.$lastname;
     $bot->reply(ButtonTemplate::create('يمكنك الآن حجز موعدك  بكل سهولة  😍 ')
     ->addButton(ElementButton::create('🛍 إحجز موعدك الأن ')
         ->type('postback')
-        ->payload('GotoDis')
+        ->payload('UserChose')
     )
     
     );
@@ -384,7 +435,7 @@ if ($DbUsername=="0") {
 
 	->addButton(ElementButton::create('🛍 احجز موعد ')
 	    ->type('postback')
-	    ->payload('GotoDis')
+	    ->payload('UserChose')
     )
     ->addButton(ElementButton::create('💬 استفسار ')
     ->url('https://www.messenger.com/t/merahi.adjalile')

@@ -1,4 +1,7 @@
-
+@php
+use Illuminate\Support\Facades\Auth;
+    $user_id=Auth::user()->id;
+@endphp
 <div class="container">
     
 <h3 class="text-center bg-premier p-4 rounded text-dark mt-4">  إعدادات عامة</h3>
@@ -13,17 +16,17 @@
     @csrf
 <div class="m-4">        
     <label class="h4 text-white " for="premier">لون الزر الأساسي :</label>
-    <input class="form-control "  value="{{Setting::get('theme.premier')}}" type="color" name="premier" id="premier">
+    <input class="form-control "  value="{{Setting::get("id_".$user_id."/".'theme.premier')}}" type="color" name="premier" id="premier">
 </div>
 
 <div class="m-4">        
     <label class="h4 text-white " for="deuxieme">لون الزر الثانوي  :</label>
-    <input class="form-control " value="{{Setting::get('theme.deuxieme')}}"  type="color" name="deuxieme" id="deuxieme">
+    <input class="form-control " value="{{Setting::get("id_".$user_id."/".'theme.deuxieme')}}"  type="color" name="deuxieme" id="deuxieme">
 </div>
 
 <div class="m-4">        
     <label class="h4 text-white " for="text-color">لون النص   :</label>
-    <input class="form-control " value="{{Setting::get('theme.text-color')}}"  type="color" name="text-color" id="text-color">
+    <input class="form-control " value="{{Setting::get("id_".$user_id."/".'theme.text-color')}}"  type="color" name="text-color" id="text-color">
 </div>
 
 <div class="m-4">
@@ -33,17 +36,17 @@
 <input type="file" id="imgupload" onchange="loadFile(event)"   name="bg-image" hidden>
 <a href="#" onclick="$('#imgupload').trigger('click'); return false;"> 
 <img class="img " id="image" alt="" width="200" height="200"
-@if (Setting::get('theme.bg-image')=="")
+@if (Setting::get("id_".$user_id."/".'theme.bg-image')=="")
 src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-131964752828011266_ko0lhf.png"
     
 @else
-src="{{Setting::get('theme.bg-image')}}"
+src="{{Setting::get("id_".$user_id."/".'theme.bg-image')}}"
 @endIf
 
 
 >
 </a>
-<input value="{{Setting::get('theme.bg-image')}}" class="form-control" type="hidden" name="image">
+<input value="{{Setting::get("id_".$user_id."/".'theme.bg-image')}}" class="form-control" type="hidden" name="image">
 
 </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Type;
 use Illuminate\Http\Request;
 use JD\Cloudder\Facades\Cloudder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class TypeController extends Controller
@@ -43,7 +44,6 @@ class TypeController extends Controller
     {
       
 
-
         if ($request->isMethod('post')) 
                  
         {
@@ -60,7 +60,9 @@ class TypeController extends Controller
             $types->temps=$request->get('temps');
             $types->point=$request->get('point');
             $types->photo=$image_url;
-           
+            $user=Auth::user()->id ;
+
+            $types->user_id=$user;
     
         $types->save();
     

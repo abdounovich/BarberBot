@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Config;
+use Setting;
+use App\Type;
 use DateTime;
 use App\Client;
 use DateInterval;
@@ -9,12 +12,10 @@ use DateTimeZone;
 use Carbon\Carbon;
 use App\Appointment;
 use Illuminate\Http\Request;
-use Config;
-use Setting;
-use App\Type;
+use Illuminate\Support\Facades\Auth;
+
 class AppointmentController extends Controller
 {
-
 
 
 
@@ -113,6 +114,7 @@ $config=Config::get('app.url');
 
     public function actif($id,$num)
     {
+
     $A=Appointment::find($id);
     $A->ActiveType=$num;
     $A->save();
@@ -204,6 +206,8 @@ elseif ($appointment->fin>$debut and $appointment->fin<$fin ){
         $app->jour=$jour;
         $app->debut=$debut;
         $app->fin=$fin;
+        $user=Auth::user()->id;
+        $app->user_id=$user;
         $app->save(); 
     
            
@@ -216,6 +220,8 @@ else{
     $app->jour=$jour;
     $app->debut=$debut;
     $app->fin=$fin;
+    $user=Auth::user()->id;
+    $app->user_id=$user;
     $app->save(); 
 
        
@@ -288,7 +294,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
 
 
   
-    public function confirmationMessage($id,$debut,$type,$jour,$username,$Cid )
+    public function confirmationMessage($id,$debut,$type,$jour,$username,$Cid,$user )
     {
   
   
@@ -320,9 +326,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   $addApp->debut=$debut;
   $addApp->fin=$fin;
   $addApp->client_id=$Cid;
-  
-    
-  
+  $addApp->user_id=$user;
   $addApp->save();
 
 
@@ -419,12 +423,13 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
 
       
-      
-          if (Setting::get($date.'.active')==1) {
-          $debut=Setting::get($date.'.debut');
-          $fin=Setting::get($date.'.fin');
-          $d_pause=Setting::get($date.'.debut-repos');
-          $f_pause=Setting::get($date.'.fin-repos');
+       $user_id=Auth::user()->id;
+
+          if (Setting::get("id_".$user_id."/".$date.'.active')==1) {
+          $debut=Setting::get("id_".$user_id."/".$date.'.debut');
+          $fin=Setting::get("id_".$user_id."/".$date.'.fin');
+          $d_pause=Setting::get("id_".$user_id."/".$date.'.debut-repos');
+          $f_pause=Setting::get("id_".$user_id."/".$date.'.fin-repos');
          
           }
           else {
@@ -456,7 +461,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
           $f_pause=$jour." ".$f_pause.":00";
           $f_pause=date("Y-m-d H:i:s", strtotime(date($f_pause))); 
       
-          $Today_appointments=Appointment::whereJour($jour)->get();
+          $Today_appointments=Appointment::whereJour($jour)->where("user_id",Auth::user()->id)->get();
       
       
           while ($debut < $fin )
@@ -556,12 +561,13 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
       
       
       
-     
-      if (Setting::get($date.'.active')==1) {
-        $debut=Setting::get($date.'.debut');
-        $fin=Setting::get($date.'.fin');
-        $d_pause=Setting::get($date.'.debut-repos');
-        $f_pause=Setting::get($date.'.fin-repos');
+      $user_id=Auth::user()->id;
+
+      if (Setting::get("id_".$user_id."/".$date.'.active')==1) {
+        $debut=Setting::get("id_".$user_id."/".$date.'.debut');
+        $fin=Setting::get("id_".$user_id."/".$date.'.fin');
+        $d_pause=Setting::get("id_".$user_id."/".$date.'.debut-repos');
+        $f_pause=Setting::get("id_".$user_id."/".$date.'.fin-repos');
        
         }
         else {
@@ -594,7 +600,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
           $f_pause=$jour." ".$f_pause.":00";
           $f_pause=date("Y-m-d H:i:s", strtotime(date($f_pause))); 
       
-          $Tomorrow_appointments=Appointment::whereJour($jour)->get();
+          $Tomorrow_appointments=Appointment::whereJour($jour)->where('user_id',Auth::user()->id)->get();
       
       
           while ($debut < $fin )
@@ -691,13 +697,14 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
       
           
        
+          $user_id=Auth::user()->id;
 
 
-          if (Setting::get($date.'.active')==1) {
-            $debut=Setting::get($date.'.debut');
-            $fin=Setting::get($date.'.fin');
-            $d_pause=Setting::get($date.'.debut-repos');
-            $f_pause=Setting::get($date.'.fin-repos');
+          if (Setting::get("id_".$user_id."/".$date.'.active')==1) {
+            $debut=Setting::get("id_".$user_id."/".$date.'.debut');
+            $fin=Setting::get("id_".$user_id."/".$date.'.fin');
+            $d_pause=Setting::get("id_".$user_id."/".$date.'.debut-repos');
+            $f_pause=Setting::get("id_".$user_id."/".$date.'.fin-repos');
            
             }
             else {
@@ -733,8 +740,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
           $f_pause=$jour." ".$f_pause.":00";
           $f_pause=date("Y-m-d H:i:s", strtotime(date($f_pause))); 
       
-          $afterTommorow_appointments=Appointment::whereJour($jour)->get();
-      
+          $afterTommorow_appointments=Appointment::whereJour($jour)->where('user_id',Auth::user()->id)->get();
       
           while ($debut < $fin )
           {

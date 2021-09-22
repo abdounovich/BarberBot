@@ -23,6 +23,7 @@
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
      
 @php
+
 $image=Setting::get('theme.bg-image');
 @endphp
 <style>

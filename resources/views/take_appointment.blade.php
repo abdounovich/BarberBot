@@ -304,6 +304,7 @@ document.getElementById('id').value=psid;
 <input type="hidden" name="jour" id="jour" value="{{$jour}}">
 <input type="hidden" name="username" id="username" value="{{$username}}">
 <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
+<input type="hidden" name="user" id="user" value="{{$user}}">
 <input type="hidden" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
 
              
@@ -339,8 +340,9 @@ function getvalue() {
         var type = $('#type').val();
         var jour = $('#jour').val();
         var id = $('#id').val();
-    
-        var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/";
+        var user = $('#user').val();
+
+        var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/"+"/"+user;
        $('#myForm').attr('action', link);
        $('#myForm').submit();
         });

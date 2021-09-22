@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Setting;
 use Illuminate\Http\Request;
 use JD\Cloudder\Facades\Cloudder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 
 class SettingController extends Controller
@@ -107,8 +108,8 @@ return view('parametres.index');
             }
 else{            $bg_image=$request->get('image');
 }
-
-        Setting::set("theme", [
+$user_id=Auth::user()->id;
+        Setting::set("id_".$user_id."/"."theme", [
             'premier'=>$premier,
             'deuxieme'=> $deuxieme,
             'text-color' => $text_color,
@@ -154,7 +155,7 @@ else{            $bg_image=$request->get('image');
 
  
 
-    Setting::set($anglais[$i], [
+    Setting::set("id_".$user_id."/".$anglais[$i], [
         'debut'=>$debut,
         'fin'=> $fin,
         'active' => $active,
