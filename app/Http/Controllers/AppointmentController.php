@@ -409,7 +409,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
   
   
-     public function today($type,$username,$Cid)
+     public function today($type,$username,$Cid,$user_id)
      {
         $debut="";
   $fin="";
@@ -423,7 +423,6 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
 
       
-       $user_id=Auth::user()->id;
 
           if (Setting::get("id_".$user_id."/".$date.'.active')==1) {
           $debut=Setting::get("id_".$user_id."/".$date.'.debut');
@@ -547,7 +546,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
   
     
-     public function tomorrow($type,$username,$Cid)
+     public function tomorrow($type,$username,$Cid,$user_id)
      {
   $debut="";
   $fin="";
@@ -561,7 +560,6 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
       
       
       
-      $user_id=Auth::user()->id;
 
       if (Setting::get("id_".$user_id."/".$date.'.active')==1) {
         $debut=Setting::get("id_".$user_id."/".$date.'.debut');
@@ -679,7 +677,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
   
   
   
-    public function afterTomorrow($type,$username,$Cid)
+    public function afterTomorrow($type,$username,$Cid,$user_id)
      
     {
   
@@ -697,7 +695,6 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
       
           
        
-          $user_id=Auth::user()->id;
 
 
           if (Setting::get("id_".$user_id."/".$date.'.active')==1) {
