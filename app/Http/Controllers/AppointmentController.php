@@ -534,7 +534,9 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
          ->with('type',$type)
          ->with('jour',$jour)
          ->with('username',$username)
-         ->with('Cid',$Cid); 
+         ->with('Cid',$Cid)         
+         ->with('user',$user_id);
+
   
   
   
@@ -669,7 +671,9 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
      ->with('type',$type)
      ->with('jour',$jour)
      ->with('username',$username)
-     ->with('Cid',$Cid);  }
+     ->with('Cid',$Cid)
+     ->with('user',$user_id);
+    }
   
   
   
@@ -809,7 +813,8 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
          ->with('type',$type)
          ->with('jour',$jour)
          ->with('username',$username)
-         ->with('Cid',$Cid);  
+         ->with('Cid',$Cid)
+         ->with('user',$user_id);
   
   
   }
