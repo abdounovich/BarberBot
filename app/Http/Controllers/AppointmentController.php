@@ -129,9 +129,9 @@ $Tommorow=date('Y-m-d', strtotime($today. ' + 1 day'));
 $afterTommorow=date('Y-m-d', strtotime($today. ' + 2 day'));
 
 
-       $Today_appointments=Appointment::where('ActiveType','>','0')->whereJour($today)->orderBy('debut', 'asc')->get();
-       $Tomorow_appointments=Appointment::where('ActiveType','>','0')->whereJour($Tommorow)->orderBy('debut', 'asc')->get();
-       $AfterTomoro_appointments=Appointment::where('ActiveType','>','0')->whereJour($afterTommorow)->orderBy('debut', 'asc')->get();
+       $Today_appointments=Appointment::where('ActiveType','>','0')->whereJour($today)->where("user_id",Auth::user()->id)->orderBy('debut', 'asc')->get();
+       $Tomorow_appointments=Appointment::where('ActiveType','>','0')->whereJour($Tommorow)->where("user_id",Auth::user()->id)->orderBy('debut', 'asc')->get();
+       $AfterTomoro_appointments=Appointment::where('ActiveType','>','0')->whereJour($afterTommorow)->where("user_id",Auth::user()->id)->orderBy('debut', 'asc')->get();
 
 
 
