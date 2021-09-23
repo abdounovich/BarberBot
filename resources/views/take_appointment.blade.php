@@ -334,7 +334,7 @@ document.getElementById('id').value=psid;
 <input type="hidden" name="jour" id="jour" value="{{$jour}}">
 <input type="hidden" name="username" id="username" value="{{$username}}">
 <input type="hidden" name="Cid" id="Cid" value="{{$Cid}}">
-<input type="hidden" name="user" id="user" value="{{$user}}">
+<input type="text" name="user" id="user" value="{{$user}}">
 <input type="hidden" name="app_id" id="app_id" value="{{ env("FACEBOOK_APP_ID")}}">
 
              
