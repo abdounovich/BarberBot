@@ -37,7 +37,6 @@
 
 
     if (Setting::get('id_'.$user.'/theme')=="") {
-          $user="0";
 $premier=Setting::get('id_0/theme.premier');
 $deuxieme=Setting::get('id_0/theme.deuxieme');
 $text_color=Setting::get('id_0/theme.text-color');
