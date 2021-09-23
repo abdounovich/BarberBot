@@ -600,7 +600,7 @@ $appointments=Appointment::whereJour($today)->where('ActiveType','1')->orWhere('
           $f_pause=$jour." ".$f_pause.":00";
           $f_pause=date("Y-m-d H:i:s", strtotime(date($f_pause))); 
       
-          $Tomorrow_appointments=Appointment::whereJour($jour)->where('user_id',$user->id)->get();
+          $Tomorrow_appointments=Appointment::whereJour($jour)->where('user_id',$user_id)->get();
       
       
           while ($debut < $fin )
