@@ -112,7 +112,7 @@ $bot->reply(GenericTemplate::create()
 });
 
 
-$botman->hears('main{$number}{$user_id}', function($bot,$number,$user_id) {
+$botman->hears('main/{$number}/{$user_id}', function($bot,$number,$user_id) {
  
     $user = $bot->getUser();
     $facebook_id = $user->getId();
@@ -219,7 +219,7 @@ date_default_timezone_set("Africa/Algiers");
      if ($aftertomorrow_statue==1) {     
         $arr[]=  ElementButton::create(' بعد غد  🕐')
                ->type('postback')
-               ->payload('main3'.$user_id);
+               ->payload('main/3/'.$user_id);
        
            }
 
@@ -228,7 +228,7 @@ date_default_timezone_set("Africa/Algiers");
 
             $arr[]=  ElementButton::create(' يوم الغد  🕐')
              ->type('postback')
-             ->payload('main2'.$user_id);
+             ->payload('main/2/'.$user_id);
            
           
          }
@@ -237,7 +237,7 @@ date_default_timezone_set("Africa/Algiers");
    
         $arr[]=  ElementButton::create(' اليوم  🕐')
         ->type('postback')
-        ->payload('main1'.$user_id);
+        ->payload('main/1/'.$user_id);
     }
 
     if ($today_statue==0 and $tomorrow_statue==0 and $aftertomorrow_statue==0) {
