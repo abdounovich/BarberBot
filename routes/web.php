@@ -45,11 +45,11 @@ Route::post('/types','TypeController@store')
 ->middleware('auth');
 Route::get('/types','TypeController@index')
 ->middleware('auth');
-Route::get('/take_appointment/{type}/D1/{username}/{Cid}','AppointmentController@today')
+Route::get('/take_appointment/{type}/D1/{username}/{Cid}/{user}','AppointmentController@today')
 ;
-Route::get('/take_appointment/{type}/D2/{username}/{Cid}','AppointmentController@tomorrow')
+Route::get('/take_appointment/{type}/D2/{username}/{Cid}/{user}','AppointmentController@tomorrow')
 ;
-Route::get('/take_appointment/{type}/D3/{username}/{Cid}','AppointmentController@afterTomorrow')
+Route::get('/take_appointment/{type}/D3/{username}/{Cid}/{user}','AppointmentController@afterTomorrow')
 ;
 Route::get('/parametres','SettingController@index')
 ->middleware('auth');

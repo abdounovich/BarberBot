@@ -70,7 +70,7 @@ $bot->typesAndWaits(2);
 
 
 
-$botman->hears('OhYes([0-9]+)', function ( $bot,$number) {
+$botman->hears('OhYes([0-9]+)/([0-9]+)', function ( $bot,$number,$user_id) {
 
 $user = $bot->getUser();
 $facebook_id = $user->getId();
@@ -96,7 +96,7 @@ $array2=array();
     ->subtitle("السعر : ".$type2->prix.' دج ')
     ->image($type2->photo)
     ->addButton(ElementButton::create(' 📆 احجز موعدك الآن')
-    ->url($this->config.'/take_appointment/'.$type2->id.'/D'.$number."/".$full_name."/".$DbUsername->id)
+    ->url($this->config.'/take_appointment/'.$type2->id.'/D'.$number."/".$full_name."/".$DbUsername->id."/".$user_id)
     ->heightRatio('tall')
     ->disableShare()
     ->enableExtensions());}
@@ -112,7 +112,7 @@ $bot->reply(GenericTemplate::create()
 });
 
 
-$botman->hears('main([0-9]+)', function($bot,$number) {
+$botman->hears('main([0-9]+)/([0-9]+)', function($bot,$number,$user_id) {
  
     $user = $bot->getUser();
     $facebook_id = $user->getId();
@@ -136,7 +136,7 @@ $DbUsername=Client::whereFacebook($full_name)->first();
      ->subtitle("السعر : ".$type->prix.' دج ')
      ->image($type->photo)
      ->addButton(ElementButton::create(' 📆 احجز موعدك الآن')
-     ->url($this->config.'/take_appointment/'.$type->id.'/D'.$number."/".$full_name."/".$DbUsername->id)
+     ->url($this->config.'/take_appointment/'.$type->id.'/D'.$number."/".$full_name."/".$DbUsername->id."/".$user_id)
      ->heightRatio('tall')
      ->disableShare()
      ->enableExtensions());}
@@ -159,7 +159,7 @@ $DbUsername=Client::whereFacebook($full_name)->first();
  
 
 $bot->reply(Question::create(' إظهار المزيد ➕ ؟   ')->addButtons([
-    Button::create(' ✅ نعم ')->value('OhYes'.$number),]));
+    Button::create(' ✅ نعم ')->value('OhYes'.$number."/".$user_id),]));
 });
 
 
@@ -219,7 +219,7 @@ date_default_timezone_set("Africa/Algiers");
      if ($aftertomorrow_statue==1) {     
         $arr[]=  ElementButton::create(' بعد غد  🕐')
                ->type('postback')
-               ->payload('main3');
+               ->payload('main3/'.$user_id);
        
            }
 
@@ -228,7 +228,7 @@ date_default_timezone_set("Africa/Algiers");
 
             $arr[]=  ElementButton::create(' يوم الغد  🕐')
              ->type('postback')
-             ->payload('main2');
+             ->payload('main2/'.$user_id);
            
           
          }
@@ -237,7 +237,7 @@ date_default_timezone_set("Africa/Algiers");
    
         $arr[]=  ElementButton::create(' اليوم  🕐')
         ->type('postback')
-        ->payload('main1');
+        ->payload('main1/'.$user_id);
     }
 
     if ($today_statue==0 and $tomorrow_statue==0 and $aftertomorrow_statue==0) {
