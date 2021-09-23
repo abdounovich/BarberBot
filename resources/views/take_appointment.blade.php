@@ -36,12 +36,22 @@
  
 
 
- 
- $premier=Setting::get('id_'.$user.'/theme.premier');
- $deuxieme=Setting::get('id_'.$user.'/theme.deuxieme');
- $text_color=Setting::get('id_'.$user.'/theme.text-color');
- $bg_image=Setting::get('id_'.$user.'/theme.bg-image');
-echo $bg_image."oooo".$user;
+    if (Setting::get('id_'.$user.'/theme')=="") {
+          $user="0";
+$premier=Setting::get('id_0/theme.premier');
+$deuxieme=Setting::get('id_0/theme.deuxieme');
+$text_color=Setting::get('id_0/theme.text-color');
+$bg_image=Setting::get('id_0/theme.bg-image');
+
+        }
+        else {
+        
+        $premier=Setting::get('id_'.$user.'/theme.premier');
+        $deuxieme=Setting::get('id_'.$user.'/theme.deuxieme');
+        $text_color=Setting::get('id_'.$user.'/theme.text-color');
+        $bg_image=Setting::get('id_'.$user.'/theme.bg-image');
+      }
+      
  @endphp
 
 
