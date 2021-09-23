@@ -371,7 +371,7 @@ function getvalue() {
         var id = $('#id').val();
         var user = $('#user').val();
 
-        var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/"+"/"+user;
+        var link="/confirmationMessage/"+id+"/"+debut+"/"+type+"/"+jour+"/"+username+"/"+Cid+"/"+user;
        $('#myForm').attr('action', link);
        $('#myForm').submit();
         });
