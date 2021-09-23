@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Config;
-use Illuminate\Http\Request; 
 use App\Appointment; 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 
 /*
@@ -105,8 +105,25 @@ Route::post('/parametres/{id}','SettingController@update')->middleware('auth');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/install', function(){
+
+return view('installation/installation');
+});
 
 
+
+Route::post('/install', function(Request $request ){
+
+    Setting::set("id_0/theme", [
+        'premier'=>'NavajoWhite',
+        'deuxieme'=> 'black',
+        'text-color' => 'white',
+        'bg-image' => 'https://res.cloudinary.com/ds9qfm1ok/image/upload/v1632348196/chq7eis8xd1qecjqinf9.png',
+            ]);
+
+            Setting::set("app_name", $request->get('application_name'));
+            echo 'ok';return;
+});
 
 
 

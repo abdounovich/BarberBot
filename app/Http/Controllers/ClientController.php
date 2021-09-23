@@ -177,6 +177,7 @@ $config=Config::get('botman.facebook.token');
     public function show(Client $client)
     {
         
+        
         $clients=Client::latest()->paginate(10); 
         $config=Config::get('botman.facebook.token');
         $appointment=Appointment::where("ActiveType",1)->first();

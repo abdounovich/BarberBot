@@ -118,13 +118,13 @@ $user_id=Auth::user()->id;
 
 
 
-             
 
-                return view("/parametres")->with("success"," لقد تم حفظ البيانات بنجاح");
+                
 
             }
+            return back()->with("success"," لقد تم حفظ البيانات بنجاح");
+
         }
-    
     /**
      * Update the specified resource in storage.
      *

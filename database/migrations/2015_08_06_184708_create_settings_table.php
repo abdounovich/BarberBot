@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateSettingsTable extends Migration
 {
@@ -12,13 +13,18 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('settings', function (Blueprint $table) {
+           
             $table->bigIncrements('id');
-            $table->string('key');
-            $table->string('value')->nullable();
+            $table->text('key');
+            $table->text('value');
             $table->string('locale')->nullable();
+    
         });
-    }
+       
+    
+      }
 
     /**
      * Reverse the migrations.
