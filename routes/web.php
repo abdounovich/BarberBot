@@ -122,6 +122,41 @@ Route::post('/install', function(Request $request ){
             ]);
 
             Setting::set("app_name", $request->get('application_name'));
+
+
+
+
+            $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
+     
+        for ($i = 0; $i < 7; $i++){
+        $debut="08:00";
+           
+        $fin="20:00";
+         
+    
+       $debut_repos="12:00";
+          
+    
+         $fin_repos="14:00";
+         
+    
+         $active="1";
+           
+    
+    
+     
+    
+        Setting::set("id_0/".$anglais[$i], [
+            'debut'=>$debut,
+            'fin'=> $fin,
+            'active' => $active,
+            'debut-repos' => $debut_repos,
+            'fin-repos' =>$fin_repos
+                ]);
+            }
+
+
+
             echo 'ok';return;
 });
 
