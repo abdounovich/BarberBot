@@ -135,6 +135,8 @@ $user_id=Auth::user()->id;
     public function update(Request $request)
     {
      
+        $user_id=Auth::user()->id;
+
         $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
  
     for ($i = 0; $i < 7; $i++){

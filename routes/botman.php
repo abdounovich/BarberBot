@@ -274,10 +274,10 @@ $full_name=$firstname.'-'.$lastname;
 $users=User::all();
 $usersArray=array();
 foreach($users as $user){
-    $usersArray[]= Element::create($user->id)
-    ->subtitle("السعر ")
+    $usersArray[]= Element::create($user->name)
+    ->subtitle("بيو ")
     ->image("https://i.stack.imgur.com/ymxwK.png")
-    ->addButton(ElementButton::create(' 📆 احجز عند '.$user->username)
+    ->addButton(ElementButton::create(' 📆 احجز عند '.$user->name)
     ->payload('GoToDis'.$user->id)
     ->type('postback'));
 }
