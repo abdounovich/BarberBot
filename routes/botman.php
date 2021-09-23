@@ -70,7 +70,7 @@ $bot->typesAndWaits(2);
 
 
 
-$botman->hears('OhYes{number}{user_id}', function ( $bot,$number,$user_id) {
+$botman->hears('OhYes([0-9]+)and([0-9]+)', function ( $bot,$number,$user_id) {
 
 $user = $bot->getUser();
 $facebook_id = $user->getId();
@@ -112,7 +112,7 @@ $bot->reply(GenericTemplate::create()
 });
 
 
-$botman->hears('main/{$number}/{$user_id}', function($bot,$number,$user_id) {
+$botman->hears('mainand([0-9]+)and([0-9]+)', function($bot,$number,$user_id) {
  
     $user = $bot->getUser();
     $facebook_id = $user->getId();
@@ -159,7 +159,7 @@ $DbUsername=Client::whereFacebook($full_name)->first();
  
 
 $bot->reply(Question::create(' إظهار المزيد ➕ ؟   ')->addButtons([
-    Button::create(' ✅ نعم ')->value('OhYes'.$number.$user_id),]));
+    Button::create(' ✅ نعم ')->value('OhYes'.$number."and".$user_id),]));
 });
 
 
@@ -219,7 +219,7 @@ date_default_timezone_set("Africa/Algiers");
      if ($aftertomorrow_statue==1) {     
         $arr[]=  ElementButton::create(' بعد غد  🕐')
                ->type('postback')
-               ->payload('main/3/'.$user_id);
+               ->payload('mainand3and'.$user_id);
        
            }
 
@@ -228,7 +228,7 @@ date_default_timezone_set("Africa/Algiers");
 
             $arr[]=  ElementButton::create(' يوم الغد  🕐')
              ->type('postback')
-             ->payload('main/2/'.$user_id);
+             ->payload('mainand2and'.$user_id);
            
           
          }
@@ -237,7 +237,7 @@ date_default_timezone_set("Africa/Algiers");
    
         $arr[]=  ElementButton::create(' اليوم  🕐')
         ->type('postback')
-        ->payload('main/1/'.$user_id);
+        ->payload('mainand1and'.$user_id);
     }
 
     if ($today_statue==0 and $tomorrow_statue==0 and $aftertomorrow_statue==0) {
