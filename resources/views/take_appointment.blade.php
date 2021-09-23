@@ -26,56 +26,76 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.classycountdown@1.0.1/css/jquery.classycountdown.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery.classycountdown@1.0.1/js/jquery.classycountdown.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
-    @php
-    $image=Setting::get('theme.bg-image');
-    @endphp
-    <style>
+   
+   
+
+@php
     
-    body{
-    
-  
-    background:url({{$image}}) ;
+
+
+ 
+
+
+ 
+ $premier=Setting::get('id_'.$user.'/theme.premier');
+ $deuxieme=Setting::get('id_'.$user.'/theme.deuxieme');
+ $text_color=Setting::get('id_'.$user.'/theme.text-color');
+ $bg_image=Setting::get('id_'.$user.'/theme.bg-image');
+
+ @endphp
+
+
+
+ <style>
+
+
+
+
+body{
+
+
+background:url({{$bg_image}});
 font-family: 'Cairo', sans-serif;
 background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+background-attachment: fixed;
+background-size: cover;
 
 }
-    .bg-premier{
-background-color:{{Setting::get('theme.premier')}};
+.bg-premier{
+background-color:{{$premier}};
 
-    }
-
-
-   
-    .btn-premier{
-      background-color:{{Setting::get('theme.premier')}};
-    }
- 
+}
 
 
-    .bg-deuxieme{
-background-color:{{Setting::get('theme.deuxieme')}};
 
-    }
+.btn-premier{
+background-color:{{$premier}};
+}
 
 
-  
-    .btn-deuxieme{
-      background-color:{{Setting::get('theme.deuxieme')}};
-    
-    }
- 
-    .text-color{
-      color:{{Setting::get('theme.text-color')}};
-    }
- 
- 
 
-    .text-premier{
-      color:{{Setting::get('theme.premier')}};
-    }
- 
+.bg-deuxieme{
+background-color:{{$deuxieme}};
+
+}
+
+
+
+.btn-deuxieme{
+background-color:{{$deuxieme}};
+
+}
+
+.text-color{
+color:{{$text_color}};
+}
+
+
+
+.text-premier{
+color:{{$premier}};
+}
+
  
 
   .card {
