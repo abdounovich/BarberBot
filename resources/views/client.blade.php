@@ -23,93 +23,83 @@
 <script src="{{URL::asset('js/jquery.classycountdown.js',true)}}"></script>
      
 @php
+    
 
-$image=Setting::get('theme.bg-image');
-@endphp
-<style>
+
+ 
+
+
+    if (Setting::get('id_'.$user.'/theme')=="") {
+$premier=Setting::get('id_0/theme.premier');
+$deuxieme=Setting::get('id_0/theme.deuxieme');
+$text_color=Setting::get('id_0/theme.text-color');
+$bg_image=Setting::get('id_0/theme.bg-image');
+
+        }
+        else {
+        
+        $premier=Setting::get('id_'.$user.'/theme.premier');
+        $deuxieme=Setting::get('id_'.$user.'/theme.deuxieme');
+        $text_color=Setting::get('id_'.$user.'/theme.text-color');
+        $bg_image=Setting::get('id_'.$user.'/theme.bg-image');
+      }
+      
+ @endphp
+
+
+
+ <style>
+
+
+
 
 body{
-    
-  
-    background:url("{{$image}}") ;
-    background-repeat: no-repeat;
+
+
+background:url({{$bg_image}});
+font-family: 'Cairo', sans-serif;
+background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
-font-family: 'Cairo', sans-serif;
-}
-  .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  margin: auto;
-  text-align: center;
-}
 
-.title {
-  color: grey;
-  font-size: 18px;
 }
+.bg-premier{
+background-color:{{$premier}};
 
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-button:hover, a:hover {
-  opacity: 0.7;
 }
 
 
 
-    .bg-premier{
-background-color:{{Setting::get('theme.premier')}};
-
-    }
-
-
-   
-    .btn-premier{
-      background-color:{{Setting::get('theme.premier')}};
-    }
- 
+.btn-premier{
+background-color:{{$premier}};
+}
 
 
-    .bg-deuxieme{
-background-color:{{Setting::get('theme.deuxieme')}};
 
-    }
+.bg-deuxieme{
+background-color:{{$deuxieme}};
+
+}
 
 
-  
-    .btn-deuxieme{
-      background-color:{{Setting::get('theme.deuxieme')}};
-    
-    }
- 
-    .text-color{
-      color:{{Setting::get('theme.text-color')}};
-    }
- 
- 
 
-    .text-premier{
-      color:{{Setting::get('theme.premier')}};
-    }
- 
- 
+.btn-deuxieme{
+background-color:{{$deuxieme}};
+
+}
+
+.text-color{
+color:{{$text_color}};
+}
+
+
+
+.text-premier{
+color:{{$premier}};
+}
+
+
+
 
 </style>
 
