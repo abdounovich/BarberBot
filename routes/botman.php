@@ -315,8 +315,10 @@ foreach($users as $user){
       }
     $bot->typesAndWaits(2);
 
-
-     $bot->reply(ButtonTemplate::create('  من فضــلــك إختــر  الحــلاق  👇👇')->addButtons($usersArray)); 
+    $bot->reply(GenericTemplate::create()
+    ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+    ->addElements($usersArray)
+   ); 
     
 });
 
