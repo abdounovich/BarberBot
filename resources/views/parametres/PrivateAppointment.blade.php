@@ -42,14 +42,17 @@
 
 
     @php
-        $appointments=App\Appointment::where("ActiveType",5)->get();
+        $appointments=App\Appointment::where("ActiveType",5)->where("user_id",Auth::user()->id)->get();
     @endphp
     
     
     
+    @if ($appointments->count()=="0")
+         @else 
+            <h3 class="text-center bg-premier p-4 rounded text-dark mt-4">المواعيد الخاصة  </h3>
+
+    @endif
     
-    
-    <h3 class="text-center bg-premier p-4 rounded text-dark mt-4">المواعيد الخاصة  </h3>
 
     <table class="table bg-dark text-white">
         <thead>

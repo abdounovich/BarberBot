@@ -40,22 +40,28 @@
 <tr class="bg-secondary text-white text-center">
         <td>{{$arabic[$i]}}</td>
         <td class="text-center"><input class="form-control  {{$anglais[$i]}} " 
-            @if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-debut'}}"
+            @if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly 
+            @endif
+             type="time" name="{{$anglais[$i].'-debut'}}"
              @if (Setting::get('id_'.$user_id.'/'.$anglais[$i].'.debut')=="")
              value="{{Setting::get('id_0/'.$anglais[$i].'.debut')}}"
 
         @else
         value="{{Setting::get('id_'.$user_id.'/'.$anglais[$i].'.debut')}}"
         @endif ></td>
-        <td><input class="form-control  {{$anglais[$i]}} "
-            @if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-fin'}}" 
-            @if ({{Setting::get("id_".$user_id."/".$anglais[$i].'.debut-repos')}}=="")
-            value={{Setting::get("id_0/".$anglais[$i].'.debut-repos')}};
-            @else             value={{Setting::get('id_'$user_id."/".$anglais[$i].'.debut-repos')}};
+        <td><input class="form-control {{$anglais[$i]}}"
+            @if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly 
+            @endif type="time" name="{{$anglais[$i].'-fin'}}" 
+            @if (Setting::get("id_".$user_id."/".$anglais[$i].'.fin')=="")
+            value='{{Setting::get("id_0/".$anglais[$i].'.fin')}}'
+            @else             value='{{Setting::get('id_'.$user_id."/".$anglais[$i].'.fin')}}'
 
-            @endif value="{{Setting::get($anglais[$i].'.fin')}}"></td>
+            @endif 
+            
+            ></td>
 
-        <td><input class="form-control  {{$anglais[$i]}}"@if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-debut-repos'}}"
+        <td><input class="form-control  {{$anglais[$i]}}"@if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly 
+            @endif type="time" name="{{$anglais[$i].'-debut-repos'}}"
             @if (Setting::get('id_'.$user_id.'/'.$anglais[$i].'.debut-repos')=="")
             value="{{Setting::get('id_0/'.$anglais[$i].'.debut-repos')}}"
             @else  value="{{Setting::get('id_'.$user_id.'/'.$anglais[$i].'.debut-repos')}}"
@@ -63,7 +69,8 @@
             @endif 
              
              ></td>
-        <td><input class="form-control  {{$anglais[$i]}} " @if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-fin-repos'}}" 
+        <td><input class="form-control  {{$anglais[$i]}} " @if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="0" ) readonly 
+            @endif type="time" name="{{$anglais[$i].'-fin-repos'}}" 
             @if (Setting::get('id_'.$user_id."/".$anglais[$i].'.fin-repos')=="")
             
             value="{{Setting::get('id_0/'.$anglais[$i].'.fin-repos')}}"
@@ -73,13 +80,26 @@
 
             @endif
             ></td>
-        <td><input  class=" " type="checkbox"    
-            @if (Setting::get("id_".$anglais[$i].'.active')=="1" ) checked  
-            @endif 
+        <td><input type="checkbox"  
+            @if (Setting::get("id_".$user_id."/".$anglais[$i].'.active')=="" )
+                @if (Setting::get("id_0/".$anglais[$i].'.active')=="0")
+                  @else
+                      checked
+                  @endif
+            @else
+                
+            @if (Setting::get("id_".$user_id.'/'.$anglais[$i].'.active')=="0")
+            @else
+                checked
+            @endif
+            @endif
+            
+
+
             onchange="myFunction('{{$i}}')" id="cb{{$i}}" data-on="مفعل" 
             data-off="موقف" data-onstyle="outline-success" data-offstyle="outline-danger"  data-toggle="toggle"></td>
   <input type="hidden" id="{{$i}}" name="{{$anglais[$i].'-active'}}" 
-  @if (Setting::get('id_0/'.$anglais[$i].'.active')=="")
+  @if (Setting::get('id_'.$user_id.'/'.$anglais[$i].'.active')=="")
   value="{{Setting::get('id_0/'.$anglais[$i].'.active')}}"
 
   @else
