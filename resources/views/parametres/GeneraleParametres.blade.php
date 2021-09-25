@@ -16,17 +16,40 @@ use Illuminate\Support\Facades\Auth;
     @csrf
 <div class="m-4">        
     <label class="h4 text-white " for="premier">لون الزر الأساسي :</label>
-    <input class="form-control "  value="{{Setting::get("id_".$user_id."/".'theme.premier')}}" type="color" name="premier" id="premier">
+    <input class="form-control "  
+    @if (Setting::get("id_".$user_id."/".'theme.premier')=="")
+    value="{{Setting::get("id_0/".'theme.premier')}}" 
+
+    @else
+            value="{{Setting::get("id_".$user_id."/".'theme.premier')}}" 
+
+    @endif
+    
+    
+    type="color" name="premier" id="premier">
 </div>
 
 <div class="m-4">        
     <label class="h4 text-white " for="deuxieme">لون الزر الثانوي  :</label>
-    <input class="form-control " value="{{Setting::get("id_".$user_id."/".'theme.deuxieme')}}"  type="color" name="deuxieme" id="deuxieme">
+    <input class="form-control "  @if (Setting::get("id_".$user_id."/".'theme.deuxieme')=="")
+    value="{{Setting::get("id_0/".'theme.deuxieme')}}" 
+
+    @else
+            value="{{Setting::get("id_".$user_id."/".'theme.deuxieme')}}" 
+
+    @endif
+      type="color" name="deuxieme" id="deuxieme">
 </div>
 
 <div class="m-4">        
     <label class="h4 text-white " for="text-color">لون النص   :</label>
-    <input class="form-control " value="{{Setting::get("id_".$user_id."/".'theme.text-color')}}"  type="color" name="text-color" id="text-color">
+    <input class="form-control "  @if (Setting::get("id_".$user_id."/".'theme.text-color')=="")
+    value="{{Setting::get("id_0/".'theme.text-color')}}" 
+
+    @else
+            value="{{Setting::get("id_".$user_id."/".'theme.text-color')}}" 
+
+    @endif type="color" name="text-color" id="text-color">
 </div>
 
 <div class="m-4">
@@ -37,7 +60,7 @@ use Illuminate\Support\Facades\Auth;
 <a href="#" onclick="$('#imgupload').trigger('click'); return false;"> 
 <img class="img " id="image" alt="" width="200" height="200"
 @if (Setting::get("id_".$user_id."/".'theme.bg-image')=="")
-src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-131964752828011266_ko0lhf.png"
+src="{{Setting::get("id_0/theme.bg-image")}}"
     
 @else
 src="{{Setting::get("id_".$user_id."/".'theme.bg-image')}}"

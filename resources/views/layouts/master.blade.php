@@ -45,6 +45,21 @@
        
           <div id="demo" class=" m-5 p-4">
           
+
+<div class=" float-right text-center">
+  <a href="/parametres" >
+<p class="h3 text-color text-center">{{Auth::user()->name}}</p>
+
+@if (Auth::user()->avatar=="")
+      <i class="fa fa-5x  fa-user text-premier text-center"></i>
+@else
+      <img src="{{Auth::user()->avatar}}" alt="avatar" width="100px" height="100px">
+
+@endif
+</a>
+</div>
+
+
        <div class="container  ">
             <div class="row ">
               <div class="col p-4 btn-group">

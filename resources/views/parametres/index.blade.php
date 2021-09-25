@@ -25,7 +25,7 @@
     </div>
 @endif
 
-
+@include('parametres.profile')
 @include('parametres.PrivateAppointment')
 @include('parametres.programme')
 @include('parametres.GeneraleParametres')

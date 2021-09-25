@@ -101,6 +101,7 @@ Route::post('/parametres/{id}','SettingController@update')->middleware('auth');
 ;
 
 
+Route::post('/edit-profile','AvatarController@update');
 
 
 
