@@ -216,9 +216,8 @@ date_default_timezone_set("Africa/Algiers");
      $tomorrow_statue=Setting::get("id_".$user_id."/".$tomorrow.".active"); 
      $aftertomorrow_statue=Setting::get("id_".$user_id."/".$aftertomorrow.".active"); 
 
-        $bot->reply($today_statue);
-        $bot->reply($tomorrow_statue);
-        $bot->reply($aftertomorrow_statue);
+        $bot->reply("ok".$today_statue);
+
 return;
 
      if ($aftertomorrow_statue==1) {     
