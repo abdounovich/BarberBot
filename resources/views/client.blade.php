@@ -26,7 +26,6 @@
     
 
 
- $user=1;
 
 
     if (Setting::get('id_'.$user.'/theme')=="") {
