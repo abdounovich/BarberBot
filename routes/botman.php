@@ -216,14 +216,14 @@ date_default_timezone_set("Africa/Algiers");
      $aftertomorrow_statue=Setting::get("id_".$user_id."/".$aftertomorrow.".active"); 
 
  
-     if ($aftertomorrow_statue==0) {     
+     if ($aftertomorrow_statue==1) {     
         $arr[]=  ElementButton::create(' بعد غد  🕐')
                ->type('postback')
                ->payload('mainand3and'.$user_id);
        
            }
 
-           if ($tomorrow_statue==0) {
+           if ($tomorrow_statue==1) {
        
 
             $arr[]=  ElementButton::create(' يوم الغد  🕐')
@@ -233,7 +233,7 @@ date_default_timezone_set("Africa/Algiers");
           
          }
 
-    if ($today_statue==0) {
+    if ($today_statue==1) {
    
         $arr[]=  ElementButton::create(' اليوم  🕐')
         ->type('postback')
