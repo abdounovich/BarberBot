@@ -246,7 +246,6 @@ date_default_timezone_set("Africa/Algiers");
        return;
     }
 
-
       }
     $bot->typesAndWaits(2);
  /* 
