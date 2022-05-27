@@ -115,7 +115,9 @@ return view('installation/installation');
 
 Route::post('/install', function(Request $request ){
 
-    Setting::set("id_0/theme", [
+    $user_id=Auth::user()->id;
+
+    Setting::set("id_".$user_id."/theme", [
         'premier'=>'NavajoWhite',
         'deuxieme'=> 'black',
         'text-color' => 'white',
@@ -147,7 +149,7 @@ Route::post('/install', function(Request $request ){
     
      
     
-        Setting::set("id_0/".$anglais[$i], [
+        Setting::set("id_".$user_id."/".$anglais[$i], [
             'debut'=>$debut,
             'fin'=> $fin,
             'active' => $active,
@@ -158,7 +160,7 @@ Route::post('/install', function(Request $request ){
 
 
 
-            echo 'ok';return;
+           return redirect("home");
 });
 
 

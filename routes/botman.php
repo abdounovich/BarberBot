@@ -216,9 +216,7 @@ date_default_timezone_set("Africa/Algiers");
      $tomorrow_statue=Setting::get("id_".$user_id."/".$tomorrow.".active"); 
      $aftertomorrow_statue=Setting::get("id_".$user_id."/".$aftertomorrow.".active"); 
 
-        $bot->reply("ok".$today_statue);
-
-return;
+    
 
      if ($aftertomorrow_statue==1) {     
         $arr[]=  ElementButton::create(' بعد غد  🕐')
@@ -246,6 +244,10 @@ return;
 
     if ($today_statue==0 and $tomorrow_statue==0 and $aftertomorrow_statue==0) {
         $arr[]='';
+
+
+        $bot->reply($today_statue);
+
        $bot->reply("المحل في عطلة , شكرا على التفهم ");
        return;
     }
